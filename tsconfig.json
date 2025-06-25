@@ -18,7 +18,7 @@
         "name": "next"
       }
     ],
-    "paths": { // <<-- ESTA É A LOCALIZAÇÃO CORRETA para a configuração de 'paths'
+    "paths": { // <<-- ESTA É A ÚNICA LOCALIZAÇÃO CORRETA para a configuração de 'paths'
       "@/*": ["./src/*"]
     }
   },

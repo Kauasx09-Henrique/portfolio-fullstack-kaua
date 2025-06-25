@@ -1,12 +1,13 @@
 // src/app/page.tsx
-"use client"; // ESSENCIAL: Marca como Client Component
+"use client"; // ESSENCIAL: Marca este arquivo como um Client Component
 
 import React, { useState, useEffect } from "react";
-import Image from "next/image"; // ESSENCIAL: Mantenha este import AQUI para sua foto de perfil!
+import Image from "next/image"; // IMPORTANTE: Mantenha este import AQUI para sua foto de perfil!
 import { motion } from "framer-motion";
 
-// IMPORTANTE: Ajuste este caminho se seu arquivo appIcons.tsx estiver em outro lugar.
-// Se ele está em 'src/data/', este caminho é o correto:
+// MUDANÇA AQUI: Importe os dados de forma mais "segura"
+// Se o erro persistir, podemos até tentar importar tudo como um único objeto,
+// mas vamos tentar assim primeiro, que é o mais comum.
 import { icons, ProjectIcons, profileImageUrl } from "@/app/data/appIcons";
 
 
@@ -36,7 +37,7 @@ export default function Home() {
     "TypeScript",
     "NestJS",
     "PHP",
-    "SQL", // Ajuste para "MySQL" se você preferir o nome exato do banco de dados para o ícone.
+    "SQL",
     "MySQL Workbench",
   ];
 
@@ -80,7 +81,7 @@ export default function Home() {
         </motion.p>
       </motion.header>
 
-      {/* Foto */}
+      {/* Foto de Perfil */}
       <motion.div
         className="mb-10 relative"
         initial={{ opacity: 0, scale: 0.8 }}
@@ -90,7 +91,7 @@ export default function Home() {
       >
         <div className="relative">
           <Image
-            src={profileImageUrl} // Usando a URL importada do appIcons.tsx
+            src={profileImageUrl}
             alt="Foto de Kauã Henrique"
             width={180}
             height={180}
@@ -100,7 +101,7 @@ export default function Home() {
         </div>
       </motion.div>
 
-      {/* Sobre mim */}
+      {/* Seção Sobre mim */}
       <motion.section
         className="max-w-3xl text-center mb-16 px-4"
         initial={{ opacity: 0, y: 50 }}
@@ -119,7 +120,7 @@ export default function Home() {
         </p>
       </motion.section>
 
-      {/* Habilidades */}
+      {/* Seção Habilidades */}
       <motion.section
         className="max-w-4xl w-full px-4 mb-16"
         initial={{ opacity: 0, y: 50 }}
@@ -150,7 +151,7 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Projetos */}
+      {/* Seção Projetos */}
       <motion.section
         className="max-w-4xl w-full px-4 mb-20"
         initial={{ opacity: 0, y: 50 }}
