@@ -1,5 +1,12 @@
 "use client";
 
+// --- Ícones para as Habilidades ---
+// icons = {...}
+// ProjectIcons = {...}
+// profileImageUrl = ...
+
+
+
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
