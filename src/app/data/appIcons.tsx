@@ -1,59 +1,70 @@
 // app/data/appIcons.tsx
-
-// Essencial para usar o componente Image e hooks no Next.js App Router
 "use client";
 
-import React from "react";
-// Importa o componente de Imagem otimizado do Next.js
-import Image from "next/image";
+import React from 'react';
 
-// --- 1. Ícones das Tecnologias (usando next/image) ---
-// Ótima prática para carregar imagens externas de forma otimizada.
+// IMPORTANTE: Importamos os ícones diretamente da biblioteca react-icons
+import {
+  DiReact,
+  DiPhp,
+  DiMysql,
+  DiJavascript1,
+  DiNodejsSmall,
+  DiHtml5,
+  DiCss3,
+} from 'react-icons/di';
+import {
+  SiNextdotjs,
+  SiTypescript,
+  SiTailwindcss,
+  SiNestjs,
+} from 'react-icons/si';
+
+// --- 1. Ícones das Tecnologias (usando react-icons) ---
+// Agora os ícones são componentes React, mais confiáveis e fáceis de customizar.
 export const icons = {
   React: (
-    <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width={32} height={32} className="mx-auto" />
+    <DiReact size={32} className="mx-auto text-cyan-400" />
   ),
   "Next.js": (
-    <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" width={32} height={32} className="mx-auto bg-white rounded-full" />
+    <SiNextdotjs size={32} className="mx-auto" /> // Este ícone já é preto e branco por padrão
   ),
   PHP: (
-    <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" width={32} height={32} className="mx-auto" />
+    <DiPhp size={32} className="mx-auto text-indigo-400" />
   ),
   SQL: (
-    <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" width={32} height={32} className="mx-auto" />
+    <DiMysql size={32} className="mx-auto text-blue-500" />
   ),
   JavaScript: (
-    <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width={32} height={32} className="mx-auto" />
+    <DiJavascript1 size={32} className="mx-auto text-yellow-400 bg-black" />
   ),
   TypeScript: (
-    <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" width={32} height={32} className="mx-auto" />
+    <SiTypescript size={32} className="mx-auto text-blue-500" />
   ),
   "Tailwind CSS": (
-    <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="Tailwind CSS" width={32} height={32} className="mx-auto" />
+    <SiTailwindcss size={32} className="mx-auto text-cyan-500" />
   ),
   "Node.js": (
-    <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" width={32} height={32} className="mx-auto" />
+    <DiNodejsSmall size={32} className="mx-auto text-green-500" />
   ),
   "React Native": (
-    <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Native" width={32} height={32} className="mx-auto" />
+    <DiReact size={32} className="mx-auto text-cyan-400" /> // Reutilizando o ícone do React
   ),
   NestJS: (
-    <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg" alt="NestJS" width={32} height={32} className="mx-auto" />
+    <SiNestjs size={32} className="mx-auto text-red-500" />
   ),
   HTML5: (
-    <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" width={32} height={32} className="mx-auto" />
+    <DiHtml5 size={32} className="mx-auto text-orange-500" />
   ),
   CSS3: (
-    <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" width={32} height={32} className="mx-auto" />
+    <DiCss3 size={32} className="mx-auto text-blue-600" />
   ),
   "MySQL Workbench": (
-    <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL Workbench" width={32} height={32} className="mx-auto" />
+    <DiMysql size={32} className="mx-auto text-blue-500" /> // Reutilizando o ícone do MySQL
   ),
 };
 
-
-// --- 2. Ícones dos Projetos (usando SVG inline) ---
-// Perfeito para ícones simples, pois não precisam de requisição externa e são fáceis de estilizar.
+// --- 2. Ícones dos Projetos (ESSA PARTE NÃO MUDOU) ---
 export const ProjectIcons = {
   mobile: (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -77,6 +88,6 @@ export const ProjectIcons = {
   ),
 };
 
-// --- 3. Imagem de Perfil ---
+// --- 3. Imagem de Perfil (ESSA PARTE NÃO MUDOU) ---
 // Garanta que a imagem "Kaua.jpg" esteja na pasta /public do seu projeto.
 export const profileImageUrl = "/Kaua.jpg";
