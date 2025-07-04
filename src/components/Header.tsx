@@ -1,10 +1,9 @@
-// src/components/Header.js
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-scroll';
-import { motion, AnimatePresence } from 'framer-motion';
-import { usePathname } from 'next/navigation';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-scroll";
+import { motion, AnimatePresence, Variants } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,26 +11,26 @@ const Header = () => {
   const pathname = usePathname();
 
   const navLinks = [
-    { id: 'home', text: 'Início' },
-    { id: 'about', text: 'Sobre' },
-    { id: 'skills', text: 'Habilidades' },
-    { id: 'projects', text: 'Projetos' },
-    { id: 'contact', text: 'Contato' },
+    { id: "home", text: "Início" },
+    { id: "about", text: "Sobre" },
+    { id: "skills", text: "Habilidades" },
+    { id: "projects", text: "Projetos" },
+    { id: "contact", text: "Contato" },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
     setIsOpen(false);
   }, [pathname]);
 
-  const menuVariants = {
+  const menuVariants: Variants = {
     open: {
       opacity: 1,
       height: "auto",
@@ -50,12 +49,12 @@ const Header = () => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     open: {
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 300,
         damping: 24,
       },
@@ -70,7 +69,11 @@ const Header = () => {
   };
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-lg py-2' : 'bg-transparent py-4'}`}>
+    <header
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        scrolled ? "bg-white shadow-lg py-2" : "bg-transparent py-4"
+      }`}
+    >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <motion.div className="text-2xl font-bold" whileHover={{ scale: 1.05 }}>
           <span className="text-[#57e9f8]">Port</span>folio
@@ -80,7 +83,11 @@ const Header = () => {
         <nav className="hidden md:block">
           <ul className="flex space-x-6">
             {navLinks.map((link) => (
-              <motion.li key={link.id} whileHover={{ y: -2 }} whileTap={{ scale: 0.95 }}>
+              <motion.li
+                key={link.id}
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <Link
                   to={link.id}
                   spy={true}
@@ -113,25 +120,31 @@ const Header = () => {
               className="absolute block w-full h-0.5 bg-gray-700 rounded-full"
               animate={isOpen ? "open" : "closed"}
               variants={{
-                closed: { top: '0.25rem', rotate: 0 },
-                open: { top: '0.8rem', rotate: 45 },
+                closed: { top: "0.25rem", rotate: 0 },
+                open: { top: "0.8rem", rotate: 45 },
               }}
+              transition={{ duration: 0.3 }}
+              style={{ position: "absolute" }}
             />
             <motion.span
               className="absolute block w-full h-0.5 bg-gray-700 rounded-full"
               animate={isOpen ? "open" : "closed"}
               variants={{
-                closed: { top: '0.8rem', opacity: 1 },
-                open: { top: '0.8rem', opacity: 0 },
+                closed: { top: "0.8rem", opacity: 1 },
+                open: { top: "0.8rem", opacity: 0 },
               }}
+              transition={{ duration: 0.3 }}
+              style={{ position: "absolute" }}
             />
             <motion.span
               className="absolute block w-full h-0.5 bg-gray-700 rounded-full"
               animate={isOpen ? "open" : "closed"}
               variants={{
-                closed: { top: '1.35rem', rotate: 0 },
-                open: { top: '0.8rem', rotate: -45 },
+                closed: { top: "1.35rem", rotate: 0 },
+                open: { top: "0.8rem", rotate: -45 },
               }}
+              transition={{ duration: 0.3 }}
+              style={{ position: "absolute" }}
             />
           </div>
         </motion.button>
