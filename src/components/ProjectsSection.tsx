@@ -1,6 +1,4 @@
 // src/components/ProjectsSection.jsx
-import { link } from 'fs';
-import { title } from 'process';
 import React from 'react';
 
 const projects = [
@@ -14,25 +12,25 @@ const projects = [
     title: 'CliniaPed+ Front-end',
     description: 'Projeto de um sistema de gerenciamento de clinicas, com funcionalidades de agendamento, cadastro de pacientes.',
     link: 'https://github.com/Kauasx09-Henrique/clinicaped-app-mobile',
-    technologies: ['React Native', 'workbench', 'Expo', 'Axios', 'Tailwind CSS', 'TypeScript' ,'Node.js'],
+    technologies: ['React Native', 'workbench', 'Expo', 'Axios', 'Tailwind CSS', 'TypeScript', 'Node.js'],
   },
-   {
+  {
     title: 'CliniaPed+ Back-end API NEST',
     description: 'Projeto de um sistema de gerenciamento de clinicas, com funcionalidades de agendamento, cadastro de pacientes.',
     link: 'https://github.com/Kauasx09-Henrique/clinicaped-api-nestjs',
-    technologies: ['React Native', 'workbench', 'Expo', 'Axios', 'Tailwind CSS', 'TypeScript' ,'Node.js'],
+    technologies: ['React Native', 'workbench', 'Expo', 'Axios', 'Tailwind CSS', 'TypeScript', 'Node.js'],
   },
   {
     title: 'Site de Portfólio',
     description: 'Portfólio pessoal desenvolvido com Next.js e Tailwind CSS.',
     link: 'https://github.com/Kauasx09-Henrique/portfolio-fullstack-kaua',
-    technologies: [ 'React', 'TypeScript'],
+    technologies: ['React', 'TypeScript'],
   },
   {
     title: 'DisBussines',
     description: 'E-comerce desenvolvido para atender a demanda de empresas que desejam ser vistas e vender seus produtos online.',
-    link: 'https://github.com/Kauasx09-Henrique/Disbussines-web',  
-    technologies: [ 'php', 'HTML', 'CSS', 'JavaScript', 'MySQL', 'Bootstrap' ,'API REST'],
+    link: 'https://github.com/Kauasx09-Henrique/Disbussines-web',
+    technologies: ['php', 'HTML', 'CSS', 'JavaScript', 'MySQL', 'Bootstrap', 'API REST'],
   }
 
 ];
