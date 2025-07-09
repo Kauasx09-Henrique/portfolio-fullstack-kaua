@@ -82,11 +82,10 @@ const Header = () => {
 
   return (
     <motion.header
-      className={`fixed w-full z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-[#0d071a]/90 backdrop-blur-md py-3 shadow-xl"
-          : "bg-transparent py-5"
-      }`}
+      className={`fixed w-full z-50 transition-all duration-500 ${scrolled
+        ? "bg-[#0d071a]/90 backdrop-blur-md py-3 shadow-xl"
+        : "bg-transparent py-5"
+        }`}
       style={{
         borderBottom: scrolled
           ? "1px solid rgba(138, 79, 255, 0.15)"
@@ -142,7 +141,7 @@ const Header = () => {
                 repeat: Infinity
               }}
             >
-              KR
+              KH
             </motion.span>
           </div>
           <motion.span
@@ -170,11 +169,10 @@ const Header = () => {
           {navLinks.map((link) => (
             <motion.button
               key={link.id}
-              className={`relative px-4 py-2.5 rounded-xl font-medium transition-all ${
-                activeLink === link.id
-                  ? "text-white"
-                  : "text-purple-200/90 hover:text-white"
-              }`}
+              className={`relative px-4 py-2.5 rounded-xl font-medium transition-all ${activeLink === link.id
+                ? "text-white"
+                : "text-purple-200/90 hover:text-white"
+                }`}
               onClick={() => scrollToSection(link.id)}
               whileHover={{
                 y: -3,
@@ -437,7 +435,7 @@ const Header = () => {
                     activeLink === link.id
                       ? "text-white bg-purple-700/50 border border-purple-500/30" // Cor de fundo mais sólida para ativo
                       : "text-purple-200/90 hover:bg-purple-800/20" // Ajuste no hover
-                  }`}
+                    }`}
                   onClick={() => scrollToSection(link.id)}
                   initial={{ opacity: 0, y: 20 }} // Vem de baixo para cima levemente
                   animate={{
