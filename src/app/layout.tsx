@@ -21,11 +21,9 @@ export default function RootLayout({
   return (
 
     <html lang="pt-BR">
-
       <body>
         <Header />
         <main>
-          {/* A variável 'children' renderizará o conteúdo da sua 'page.tsx' aqui. */}
           {children}
         </main>
         <Footer />

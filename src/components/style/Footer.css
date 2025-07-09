@@ -1,0 +1,206 @@
+/* Base Footer Styles */
+.footer {
+  background: linear-gradient(to bottom, #0d071a 0%, #1a0d33 100%); /* Darker, richer purple gradient */
+  color: #e0e7ff; /* Light purple-blue text */
+  padding: 4rem 1.5rem; /* Increased padding */
+  font-family: 'Inter', sans-serif; /* Example font, use your project's font */
+  border-top: 1px solid rgba(138, 79, 255, 0.2); /* Subtle top border */
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem; /* Spacing between main sections */
+}
+
+/* Footer Content - Top Section */
+.footer-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem; /* Spacing within content section */
+}
+
+.footer-name {
+  font-size: 2.8rem; /* Larger font for name */
+  font-weight: 700;
+  color: #ffffff; /* White for main name */
+  letter-spacing: -0.05em;
+}
+
+.name-highlight {
+  color: #8b5cf6; /* Stronger purple for highlight */
+}
+
+.footer-description {
+  font-size: 1.1rem;
+  max-width: 600px;
+  line-height: 1.6;
+  color: #c4b5fd; /* Softer purple for description */
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  gap: 1.5rem; /* Spacing between social icons */
+  margin-top: 1rem;
+}
+
+.social-link {
+  color: #a78bfa; /* Default social icon color */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover */
+  padding: 0.5rem; /* Makes click area larger */
+  display: flex; /* Centers icon */
+  align-items: center;
+  justify-content: center;
+}
+
+/* WhatsApp Button */
+.whatsapp-button {
+  display: inline-flex; /* Allows icon and text on same line */
+  align-items: center;
+  gap: 0.75rem; /* Space between icon and text */
+  background: linear-gradient(to right, #8b5cf6, #6366f1); /* Vibrant purple gradient */
+  color: #ffffff;
+  padding: 0.9rem 2rem; /* Generous padding */
+  border-radius: 9999px; /* Pill shape */
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  box-shadow: 0 5px 15px rgba(138, 79, 255, 0.4); /* Subtle shadow */
+  margin-top: 1.5rem;
+}
+
+.whatsapp-button:hover {
+  transform: translateY(-3px); /* Lift effect */
+  box-shadow: 0 8px 25px rgba(138, 79, 255, 0.7); /* More prominent shadow on hover */
+}
+
+.whatsapp-icon {
+  font-size: 1.3rem; /* Size for WhatsApp icon */
+}
+
+/* Divider */
+.footer-divider {
+  width: 80%; /* Width of the divider */
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(138, 79, 255, 0.3), transparent); /* Gradient fading to transparent */
+  margin: 2rem 0; /* Spacing around the divider */
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+  text-align: center;
+  width: 100%;
+}
+
+.footer-bottom-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Space between contact details and copyright */
+  margin-bottom: 2rem; /* Space before developer credit */
+}
+
+.contact-details {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  justify-content: center;
+  gap: 1.5rem 2.5rem; /* Vertical and horizontal spacing */
+  font-size: 1rem;
+  color: #a78bfa; /* Consistent color for contact info */
+}
+
+.contact-item {
+  display: inline-flex; /* Align icon and text */
+  align-items: center;
+  gap: 0.5rem; /* Space between icon and text */
+}
+
+.contact-icon {
+  color: #e0e7ff; /* Slightly brighter icon color */
+  font-size: 1.1rem;
+}
+
+.copyright p {
+  font-size: 0.95rem;
+  color: #c4b5fd;
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+.developer-credit {
+  font-size: 0.9rem;
+  color: #a78bfa;
+  margin-top: 1.5rem;
+  opacity: 0.7;
+}
+
+.developer-credit .heart-emoji {
+  color: #ff6b81; /* A vibrant pink for the heart */
+  font-size: 1.1em;
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 768px) {
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+    gap: 4rem;
+  }
+
+  .footer-content {
+    align-items: flex-start;
+    text-align: left;
+    flex: 1; /* Allows content to take available space */
+  }
+
+  .footer-bottom {
+    flex: 1; /* Allows bottom section to take available space */
+    text-align: left;
+  }
+
+  .footer-bottom-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0;
+  }
+
+  .contact-details {
+    justify-content: flex-start;
+    flex-direction: column; /* Stack contact items vertically */
+    gap: 0.8rem;
+  }
+
+  .whatsapp-button {
+    margin-left: 0; /* Remove margin from mobile alignment */
+  }
+
+  .footer-divider {
+    display: none; /* Hide divider on desktop */
+  }
+
+  .developer-credit {
+    margin-top: 2rem; /* Adjust spacing */
+  }
+}
+
+@media (max-width: 767px) {
+  .footer-name {
+    font-size: 2.2rem;
+  }
+  .footer-description {
+    font-size: 1rem;
+  }
+  .whatsapp-button {
+    font-size: 1rem;
+    padding: 0.8rem 1.8rem;
+  }
+}
