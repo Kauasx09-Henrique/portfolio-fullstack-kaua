@@ -64,7 +64,7 @@ const HomeScreen = () => {
       title: "Sistema E-Commerce",
       description: "Marketplace robusto para microempreendedores locais, incluindo gestão de produtos, pedidos e usuários.",
       tags: ["PHP", "MySQL", "JavaScript", "CSS3"],
-      imagem: '/Diss_tcc.jpg',
+      imagem: '/Disbusines.png',
       accentColor: "#f87171" // Vermelho para este projeto
     },
   ];
@@ -88,35 +88,35 @@ const HomeScreen = () => {
   const textGradient = `linear-gradient(to right, #e2e8f0, #cbd5e1)`;
 
   return (
-    <section 
-      id="home" 
+    <section
+      id="home"
       className="min-h-screen flex items-center pt-24 pb-12 md:pt-16 overflow-hidden relative"
-      style={{ 
+      style={{
         background: 'radial-gradient(circle at 10% 20%, #0a192f 0%, #020617 100%)'
       }}
     >
       {/* Elementos decorativos de fundo animados (novas animações contínuas) */}
-      <motion.div 
+      <motion.div
         className="absolute top-1/4 left-[15%] w-72 h-72 rounded-full mix-blend-screen blur-xl opacity-20"
         style={{ backgroundColor: currentAccent }}
         animate={{ scale: [1, 1.1, 1], rotate: [0, 20, 0], x: [0, -30, 0], y: [0, 20, 0] }}
         transition={{ duration: 15, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
       />
-      <motion.div 
+      <motion.div
         className="absolute bottom-1/3 right-[10%] w-96 h-96 rounded-full mix-blend-screen blur-xl opacity-25"
         style={{ backgroundColor: currentAccent }}
         animate={{ scale: [1, 0.9, 1], rotate: [0, -15, 0], x: [0, 25, 0], y: [0, -15, 0] }}
         transition={{ duration: 18, repeat: Infinity, repeatType: "reverse", ease: "easeInOut", delay: 1 }}
       />
       {/* Novas partículas/ondas de fundo */}
-      <motion.div 
+      <motion.div
         className="absolute inset-0 z-0 opacity-10"
-        animate={{ 
+        animate={{
           backgroundPosition: ['0% 0%', '100% 100%'],
           opacity: [0.05, 0.15, 0.05]
         }}
         transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-        style={{ 
+        style={{
           backgroundImage: `radial-gradient(circle at 20% 80%, ${currentAccent}20, transparent 60%), radial-gradient(circle at 80% 20%, ${currentAccent}20, transparent 60%)`,
           backgroundSize: '200% 200%'
         }}
@@ -146,7 +146,7 @@ const HomeScreen = () => {
             className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 bg-clip-text text-transparent"
             style={{ backgroundImage: textGradient }}
           >
-            Olá, eu sou <motion.span 
+            Olá, eu sou <motion.span
               style={{ color: currentAccent }}
               animate={{ filter: [`drop-shadow(0 0px 0px ${currentAccent}00)`, `drop-shadow(0 0px 8px ${currentAccent}80)`, `drop-shadow(0 0px 0px ${currentAccent}00)`] }}
               transition={{ duration: 3, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
@@ -168,8 +168,8 @@ const HomeScreen = () => {
             transition={{ delay: 0.9, duration: 0.7 }}
             className="text-[#cbd5e1] mb-8 max-w-lg mx-auto lg:mx-0 text-lg leading-relaxed"
           >
-            Transformo ideias em soluções digitais com tecnologias modernas e 
-            <span className="font-semibold" style={{ color: currentAccent }}> designs impactantes</span>. 
+            Transformo ideias em soluções digitais com tecnologias modernas e
+            <span className="font-semibold" style={{ color: currentAccent }}> designs impactantes</span>.
             Especializado em criar experiências que encantam usuários e resolvem problemas reais.
           </motion.p>
 
@@ -179,7 +179,7 @@ const HomeScreen = () => {
             transition={{ delay: 1.1, duration: 0.7, staggerChildren: 0.15 }}
             className="flex flex-wrap gap-4 justify-center lg:justify-start mb-16"
           >
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.2, duration: 0.6 }}
@@ -200,7 +200,7 @@ const HomeScreen = () => {
                 Ver Projetos
               </Link>
             </motion.div>
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.3, duration: 0.6 }}
@@ -232,7 +232,7 @@ const HomeScreen = () => {
             whileHover={{ scale: 1.01, boxShadow: `0 15px 40px -8px ${currentAccent}40` }} // Sombra no hover
           >
             <div className="flex items-start gap-4">
-              <motion.div 
+              <motion.div
                 className="p-3 rounded-full flex-shrink-0"
                 style={{ background: `linear-gradient(135deg, ${currentAccent}30, ${currentAccent}10)` }}
                 initial={{ opacity: 0, scale: 0.5 }}
@@ -244,21 +244,21 @@ const HomeScreen = () => {
                 </svg>
               </motion.div>
               <div>
-                <motion.h3 
+                <motion.h3
                   className="text-xl font-bold mb-3 text-white"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.6, duration: 0.5 }}
                 >Minha Jornada</motion.h3>
-                <motion.p 
+                <motion.p
                   className="text-[#cbd5e1] mb-4"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.7, duration: 0.5 }}
                 >
-                  Desenvolvedor full-stack com 3 anos de experiência criando soluções digitais. 
-                  Especializado em React, Node.js e design de interfaces que combinam 
-                  <span style={{ color: currentAccent }}> funcionalidade</span> e 
+                  Desenvolvedor full-stack com 3 anos de experiência criando soluções digitais.
+                  Especializado em React, Node.js e design de interfaces que combinam
+                  <span style={{ color: currentAccent }}> funcionalidade</span> e
                   <span style={{ color: currentAccent }}> estética</span>.
                 </motion.p>
                 <div className="flex flex-wrap gap-2">
@@ -266,8 +266,8 @@ const HomeScreen = () => {
                     <motion.span
                       key={index}
                       className="px-3 py-1 rounded-full text-sm"
-                      style={{ 
-                        background: `linear-gradient(90deg, ${currentAccent}20, ${currentAccent}10)`, 
+                      style={{
+                        background: `linear-gradient(90deg, ${currentAccent}20, ${currentAccent}10)`,
                         color: '#e2e8f0',
                         border: `1px solid ${currentAccent}20`
                       }}
@@ -296,7 +296,7 @@ const HomeScreen = () => {
           animate={{ opacity: 1, scale: 1, x: 0 }}
           transition={{ duration: 0.9, delay: 0.8, ease: "easeOut" }}
         >
-          <div 
+          <div
             className="relative w-full h-[500px] md:h-[550px] lg:h-full overflow-hidden rounded-3xl border border-[#1e293b] shadow-2xl transform-style-3d transition-all duration-300" // transform-style-3d
             onMouseEnter={() => setIsHoveringCarousel(true)}
             onMouseLeave={() => setIsHoveringCarousel(false)}
@@ -324,7 +324,7 @@ const HomeScreen = () => {
                         className="z-10"
                       />
                     )}
-                    <div 
+                    <div
                       className="absolute inset-0 z-20 flex flex-col justify-end p-6 md:p-8"
                       style={{ background: `linear-gradient(0deg, #000000D0 0%, ${project.accentColor}00 100%)` }}
                     >
@@ -336,8 +336,8 @@ const HomeScreen = () => {
                             <motion.span
                               key={tagIndex}
                               className="px-3 py-1 rounded-full text-sm"
-                              style={{ 
-                                backgroundColor: `${project.accentColor}20`, 
+                              style={{
+                                backgroundColor: `${project.accentColor}20`,
                                 color: '#e2e8f0',
                                 border: `1px solid ${project.accentColor}30`
                               }}
@@ -373,7 +373,7 @@ const HomeScreen = () => {
             </div>
 
             {/* Indicador de projeto */}
-            <div 
+            <div
               className="absolute top-6 right-6 z-30 px-4 py-2 rounded-full font-bold backdrop-blur-sm"
               style={{
                 backgroundColor: `${currentAccent}20`,
