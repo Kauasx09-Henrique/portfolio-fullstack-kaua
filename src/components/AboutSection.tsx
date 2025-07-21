@@ -10,8 +10,6 @@ import { FaMapMarkerAlt } from 'react-icons/fa'; // Mantido para FaMapMarkerAlt 
 type AboutSectionProps = {
   currentAccent: string;
 };
-
-// Componente SocialIcon aprimorado
 const SocialIcon = ({
   href,
   children,
@@ -57,47 +55,47 @@ const AboutSection: React.FC<AboutSectionProps> = ({ currentAccent }) => {
   };
 
   const [age, setAge] = useState(calculateAge());
-  const [isHovered, setIsHovered] = useState(false); // Estado para o hover da foto
+  const [isHovered, setIsHovered] = useState(false); 
 
   useEffect(() => {
     setAge(calculateAge());
   }, []);
 
-  const whatsappPhoneNumber = "556185543250"; // Seu número de telefone (apenas números)
+  const whatsappPhoneNumber = "556185543250"; 
   const whatsappPredefinedMessage = encodeURIComponent("Olá Kauã, vi seu portfólio e gostaria de conversar sobre um projeto!");
 
   return (
     <section id="about" className="py-24 relative overflow-hidden bg-[#0d071a]">
-      {/* Elementos decorativos de fundo com animação contínua e mais impacto */}
+     
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-40">
         <motion.div
           className="absolute top-[10%] left-[5%] w-96 h-96 rounded-full blur-3xl opacity-20"
           style={{ background: `radial-gradient(circle, ${currentAccent}80, transparent 70%)` }}
-          animate={{ y: [0, 30, 0], x: [0, -40, 0], rotate: [0, 360], scale: [1, 1.1, 1] }} // Movimento mais complexo
+          animate={{ y: [0, 30, 0], x: [0, -40, 0], rotate: [0, 360], scale: [1, 1.1, 1] }}
           transition={{ duration: 15, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
         ></motion.div>
         <motion.div
           className="absolute bottom-[5%] right-[10%] w-80 h-80 rounded-full blur-3xl opacity-25"
           style={{ background: `radial-gradient(circle, ${currentAccent}AA, transparent 70%)` }}
-          animate={{ y: [0, -25, 0], x: [0, 30, 0], rotate: [0, -360], scale: [1, 0.9, 1] }} // Movimento mais complexo
+          animate={{ y: [0, -25, 0], x: [0, 30, 0], rotate: [0, -360], scale: [1, 0.9, 1] }}
           transition={{ duration: 18, repeat: Infinity, repeatType: "reverse", ease: "easeInOut", delay: 0.5 }}
         ></motion.div>
-        {/* Adiciona mais um ponto de luz sutil com pulsação */}
+      
         <motion.div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full blur-3xl opacity-15"
           style={{ background: `radial-gradient(circle, ${currentAccent}CC, transparent 70%)` }}
-          animate={{ scale: [1, 1.1, 1], opacity: [0.15, 0.25, 0.15] }} // Pulsação de escala e opacidade
+          animate={{ scale: [1, 1.1, 1], opacity: [0.15, 0.25, 0.15] }} 
           transition={{ duration: 10, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
         ></motion.div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10 text-white">
-        {/* Título da Seção */}
+    
         <motion.div
           className="text-center mb-16"
-          initial={{ opacity: 0, y: -40 }} // Começa mais acima
+          initial={{ opacity: 0, y: -40 }} 
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }} // Ativa mais cedo
+          viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <motion.h2 className="text-4xl md:text-5xl font-extrabold mb-4">
@@ -124,8 +122,8 @@ const AboutSection: React.FC<AboutSectionProps> = ({ currentAccent }) => {
             onMouseLeave={() => setIsHovered(false)}
           >
             <div className="relative">
-              {/* Brilho animado pulsante atrás da imagem */}
-              <motion.div // Animação contínua e mais pronunciada
+         
+              <motion.div 
                 className="absolute -inset-6 rounded-full blur-xl opacity-70 animate-pulse-slow"
                 style={{ background: `linear-gradient(135deg, ${currentAccent}E0, ${currentAccent}B0)` }}
                 animate={{
@@ -140,30 +138,28 @@ const AboutSection: React.FC<AboutSectionProps> = ({ currentAccent }) => {
                 className="relative w-72 h-72 rounded-full overflow-hidden border-4 border-white shadow-2xl"
                 animate={{
                   boxShadow: isHovered
-                    ? `0 0 50px ${currentAccent}FF, 0 0 80px ${currentAccent}C0` // Brilho MUITO mais intenso
-                    : "0 10px 40px rgba(0, 0, 0, 0.5)" // Sombra mais proeminente
+                    ? `0 0 50px ${currentAccent}FF, 0 0 80px ${currentAccent}C0` 
+                    : "0 10px 40px rgba(0, 0, 0, 0.5)" 
                 }}
-                transition={{ duration: 0.4 }} // Transição mais suave
+                transition={{ duration: 0.4 }} 
               >
                 <Image
-                  src="/Kaua.jpg"
+                  src="/Foto_Kaua.jpg"
                   alt="Foto de Kauã Henrique"
-                  width={288}
-                  height={288}
+                  width={600}
+                  height={600}
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     e.currentTarget.onerror = null;
                     e.currentTarget.src = 'https://placehold.co/600x600/1e0d3c/c4b5fd?text=Kauã+Henrique';
                   }}
                 />
-                {/* Overlay na imagem */}
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0d071a] opacity-30"
-                  animate={{ opacity: isHovered ? 0.6 : 0 }} // Fica mais visível no hover
+                  animate={{ opacity: isHovered ? 0.6 : 0 }} 
                   transition={{ duration: 0.3 }}
                 ></motion.div>
               </motion.div>
-              {/* Nome flutuante */}
               <motion.div
                 className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-6 py-3 rounded-full font-bold shadow-xl" // Maior e com mais sombra
                 initial={{ opacity: 0, y: 50, scale: 0.8 }} // Vem de mais abaixo e menor

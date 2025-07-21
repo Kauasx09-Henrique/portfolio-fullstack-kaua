@@ -49,7 +49,7 @@ const HomeScreen = () => {
       description: "Sistema completo de marcação de consultas pediátricas com funcionalidades avançadas e gestão de prontuários.",
       tags: ["React Native", "NestJS", "PostgreSQL"],
       imagem: '/Clinicaped.jpg',
-      accentColor: "#4ade80" // Verde para este projeto
+      accentColor: "#00f721ff" // Verde para este projeto
     },
     {
       id: 2,
@@ -57,19 +57,19 @@ const HomeScreen = () => {
       description: "Plataforma profissional e responsiva com agendamento online intuitivo e área do paciente segura.",
       tags: ["React", "TypeScript", "UI/UX Design"],
       imagem: '/Vanessa_web.jpg',
-      accentColor: "#a78bfa" // Roxo para este projeto
+      accentColor: "#8c00ffff" // Roxo para este projeto
     },
     {
       id: 3,
-      title: "Sistema E-Commerce",
+      title: "Sistema Disbusines",
       description: "Marketplace robusto para microempreendedores locais, incluindo gestão de produtos, pedidos e usuários.",
       tags: ["PHP", "MySQL", "JavaScript", "CSS3"],
       imagem: '/Disbusines.png',
-      accentColor: "#f87171" // Vermelho para este projeto
+      accentColor: "#00d9ffff" // Vermelho para este projeto
     },
   ];
 
-  // Rotação automática controlada por hover
+ 
   useEffect(() => {
     let interval: NodeJS.Timeout;
     if (!isHoveringCarousel) {
@@ -95,7 +95,7 @@ const HomeScreen = () => {
         background: 'radial-gradient(circle at 10% 20%, #0a192f 0%, #020617 100%)'
       }}
     >
-      {/* Elementos decorativos de fundo animados (novas animações contínuas) */}
+  
       <motion.div
         className="absolute top-1/4 left-[15%] w-72 h-72 rounded-full mix-blend-screen blur-xl opacity-20"
         style={{ backgroundColor: currentAccent }}
@@ -108,7 +108,7 @@ const HomeScreen = () => {
         animate={{ scale: [1, 0.9, 1], rotate: [0, -15, 0], x: [0, 25, 0], y: [0, -15, 0] }}
         transition={{ duration: 18, repeat: Infinity, repeatType: "reverse", ease: "easeInOut", delay: 1 }}
       />
-      {/* Novas partículas/ondas de fundo */}
+    
       <motion.div
         className="absolute inset-0 z-0 opacity-10"
         animate={{
@@ -123,10 +123,10 @@ const HomeScreen = () => {
       />
 
       <div className="container mx-auto grid lg:grid-cols-2 gap-8 xl:gap-16 items-center px-4 relative z-10">
-        {/* Coluna Esquerda - Conteúdo Principal */}
+        
         <motion.div
           className="text-center lg:text-left"
-          initial={{ opacity: 0, x: -50 }} // Animação de entrada da coluna
+          initial={{ opacity: 0, x: -50 }} 
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
@@ -223,7 +223,7 @@ const HomeScreen = () => {
             </motion.div>
           </motion.div>
 
-          {/* Seção "Minha Jornada" (destaque no texto) */}
+         
           <motion.div
             className="p-6 rounded-xl max-w-lg mx-auto lg:mx-0 border border-[#1e293b]/70 bg-gradient-to-br from-[#0f172a] to-[#071427] shadow-2xl"
             initial={{ opacity: 0, y: 50 }}
@@ -288,11 +288,9 @@ const HomeScreen = () => {
             </div>
           </motion.div>
         </motion.div>
-
-        {/* Coluna Direita - Carrossel de Projetos (AnimatePresence para transição de rotação) */}
         <motion.div
-          className="relative lg:h-[600px] flex items-center justify-center perspective-1000" // Adicionado perspective para 3D
-          initial={{ opacity: 0, scale: 0.9, x: 50 }} // Entra da direita
+          className="relative lg:h-[600px] flex items-center justify-center perspective-1000" 
+          initial={{ opacity: 0, scale: 0.9, x: 50 }} 
           animate={{ opacity: 1, scale: 1, x: 0 }}
           transition={{ duration: 0.9, delay: 0.8, ease: "easeOut" }}
         >
@@ -302,17 +300,17 @@ const HomeScreen = () => {
             onMouseLeave={() => setIsHoveringCarousel(false)}
             style={{ boxShadow: `0 10px 40px -5px ${currentAccent}30` }}
           >
-            <AnimatePresence initial={false} mode="wait"> {/* Usa AnimatePresence para transições entre projetos */}
+            <AnimatePresence initial={false} mode="wait"> 
               {projects.map((project, index) => (
-                index === currentProject && ( // Renderiza apenas o projeto atual
+                index === currentProject && ( 
                   <motion.div
                     key={project.id}
                     className="absolute inset-0"
-                    initial={{ opacity: 0, rotateY: -90 }} // Começa invisível e virado para a esquerda
-                    animate={{ opacity: 1, rotateY: 0 }} // Vira para frente e aparece
-                    exit={{ opacity: 0, rotateY: 90 }} // Vira para a direita e some
-                    transition={{ duration: 0.7, ease: "easeInOut" }} // Transição para o flip
-                    whileHover={{ scale: 1.02 }} // Leve zoom no hover do projeto atual
+                    initial={{ opacity: 0, rotateY: -90 }} 
+                    animate={{ opacity: 1, rotateY: 0 }} 
+                    exit={{ opacity: 0, rotateY: 90 }} 
+                    transition={{ duration: 0.7, ease: "easeInOut" }} 
+                    whileHover={{ scale: 1.02 }} 
                   >
                     {project.imagem && (
                       <Image
@@ -342,8 +340,7 @@ const HomeScreen = () => {
                                 border: `1px solid ${project.accentColor}30`
                               }}
                               whileHover={{ scale: 1.05, backgroundColor: `${project.accentColor}40` }}
-                              transition={{ duration: 0.2 }}
-                            >
+                              transition={{ duration: 0.2 }}>
                               {tag}
                             </motion.span>
                           ))}
@@ -354,8 +351,6 @@ const HomeScreen = () => {
                 )
               ))}
             </AnimatePresence>
-
-            {/* Controles do carrossel */}
             <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30 flex gap-2 backdrop-blur-sm p-2 rounded-full bg-black/30">
               {projects.map((_, index) => (
                 <motion.button
@@ -371,8 +366,6 @@ const HomeScreen = () => {
                 />
               ))}
             </div>
-
-            {/* Indicador de projeto */}
             <div
               className="absolute top-6 right-6 z-30 px-4 py-2 rounded-full font-bold backdrop-blur-sm"
               style={{
