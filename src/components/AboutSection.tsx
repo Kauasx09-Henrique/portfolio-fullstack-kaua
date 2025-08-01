@@ -55,18 +55,18 @@ const AboutSection: React.FC<AboutSectionProps> = ({ currentAccent }) => {
   };
 
   const [age, setAge] = useState(calculateAge());
-  const [isHovered, setIsHovered] = useState(false); 
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     setAge(calculateAge());
   }, []);
 
-  const whatsappPhoneNumber = "556185543250"; 
+  const whatsappPhoneNumber = "556185543250";
   const whatsappPredefinedMessage = encodeURIComponent("Olá Kauã, vi seu portfólio e gostaria de conversar sobre um projeto!");
 
   return (
     <section id="about" className="py-24 relative overflow-hidden bg-[#0d071a]">
-     
+
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-40">
         <motion.div
           className="absolute top-[10%] left-[5%] w-96 h-96 rounded-full blur-3xl opacity-20"
@@ -80,20 +80,20 @@ const AboutSection: React.FC<AboutSectionProps> = ({ currentAccent }) => {
           animate={{ y: [0, -25, 0], x: [0, 30, 0], rotate: [0, -360], scale: [1, 0.9, 1] }}
           transition={{ duration: 18, repeat: Infinity, repeatType: "reverse", ease: "easeInOut", delay: 0.5 }}
         ></motion.div>
-      
+
         <motion.div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full blur-3xl opacity-15"
           style={{ background: `radial-gradient(circle, ${currentAccent}CC, transparent 70%)` }}
-          animate={{ scale: [1, 1.1, 1], opacity: [0.15, 0.25, 0.15] }} 
+          animate={{ scale: [1, 1.1, 1], opacity: [0.15, 0.25, 0.15] }}
           transition={{ duration: 10, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
         ></motion.div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10 text-white">
-    
+
         <motion.div
           className="text-center mb-16"
-          initial={{ opacity: 0, y: -40 }} 
+          initial={{ opacity: 0, y: -40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -122,8 +122,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ currentAccent }) => {
             onMouseLeave={() => setIsHovered(false)}
           >
             <div className="relative">
-         
-              <motion.div 
+              <motion.div
                 className="absolute -inset-6 rounded-full blur-xl opacity-70 animate-pulse-slow"
                 style={{ background: `linear-gradient(135deg, ${currentAccent}E0, ${currentAccent}B0)` }}
                 animate={{
@@ -138,13 +137,13 @@ const AboutSection: React.FC<AboutSectionProps> = ({ currentAccent }) => {
                 className="relative w-72 h-72 rounded-full overflow-hidden border-4 border-white shadow-2xl"
                 animate={{
                   boxShadow: isHovered
-                    ? `0 0 50px ${currentAccent}FF, 0 0 80px ${currentAccent}C0` 
-                    : "0 10px 40px rgba(0, 0, 0, 0.5)" 
+                    ? `0 0 50px ${currentAccent}FF, 0 0 80px ${currentAccent}C0`
+                    : "0 10px 40px rgba(0, 0, 0, 0.5)"
                 }}
-                transition={{ duration: 0.4 }} 
+                transition={{ duration: 0.4 }}
               >
                 <Image
-                  src="/Foto_Kaua.jpg"
+                  src="/Foto_Kaua.JPG"
                   alt="Foto de Kauã Henrique"
                   width={600}
                   height={600}
@@ -156,17 +155,18 @@ const AboutSection: React.FC<AboutSectionProps> = ({ currentAccent }) => {
                 />
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0d071a] opacity-30"
-                  animate={{ opacity: isHovered ? 0.6 : 0 }} 
+                  animate={{ opacity: isHovered ? 0.6 : 0 }}
                   transition={{ duration: 0.3 }}
                 ></motion.div>
               </motion.div>
               <motion.div
                 className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-6 py-3 rounded-full font-bold shadow-xl" // Maior e com mais sombra
-                initial={{ opacity: 0, y: 50, scale: 0.8 }} // Vem de mais abaixo e menor
+                initial={{ opacity: 0, y: 50, scale: 0.8 }}
                 animate={{
                   opacity: isHovered ? 1 : 0,
                   y: isHovered ? 0 : 50,
                   scale: isHovered ? 1 : 0.8
+
                 }}
                 transition={{ type: "spring", damping: 20, stiffness: 100 }} // Transição de mola
               >

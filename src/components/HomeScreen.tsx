@@ -67,9 +67,18 @@ const HomeScreen = () => {
       imagem: '/Disbusines.png',
       accentColor: "#00d9ffff" // Vermelho para este projeto
     },
+    {
+      id: 4,
+      title: "MavaConnect+",
+      description: "Plataforma voltada para igrejas com gestão de visitantes, integração com WhatsApp e painéis administrativos.",
+      tags: ["Node.js", "Express", "React", "Tailwind", "PostgreSQL"],
+      imagem: '/Mavaconnect.jpg',
+      accentColor: "#5AC8FA" // Azul claro, cor já usada no tema
+    }
+
   ];
 
- 
+
   useEffect(() => {
     let interval: NodeJS.Timeout;
     if (!isHoveringCarousel) {
@@ -95,7 +104,7 @@ const HomeScreen = () => {
         background: 'radial-gradient(circle at 10% 20%, #0a192f 0%, #020617 100%)'
       }}
     >
-  
+
       <motion.div
         className="absolute top-1/4 left-[15%] w-72 h-72 rounded-full mix-blend-screen blur-xl opacity-20"
         style={{ backgroundColor: currentAccent }}
@@ -108,7 +117,7 @@ const HomeScreen = () => {
         animate={{ scale: [1, 0.9, 1], rotate: [0, -15, 0], x: [0, 25, 0], y: [0, -15, 0] }}
         transition={{ duration: 18, repeat: Infinity, repeatType: "reverse", ease: "easeInOut", delay: 1 }}
       />
-    
+
       <motion.div
         className="absolute inset-0 z-0 opacity-10"
         animate={{
@@ -123,10 +132,10 @@ const HomeScreen = () => {
       />
 
       <div className="container mx-auto grid lg:grid-cols-2 gap-8 xl:gap-16 items-center px-4 relative z-10">
-        
+
         <motion.div
           className="text-center lg:text-left"
-          initial={{ opacity: 0, x: -50 }} 
+          initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
@@ -223,7 +232,7 @@ const HomeScreen = () => {
             </motion.div>
           </motion.div>
 
-         
+
           <motion.div
             className="p-6 rounded-xl max-w-lg mx-auto lg:mx-0 border border-[#1e293b]/70 bg-gradient-to-br from-[#0f172a] to-[#071427] shadow-2xl"
             initial={{ opacity: 0, y: 50 }}
@@ -289,8 +298,8 @@ const HomeScreen = () => {
           </motion.div>
         </motion.div>
         <motion.div
-          className="relative lg:h-[600px] flex items-center justify-center perspective-1000" 
-          initial={{ opacity: 0, scale: 0.9, x: 50 }} 
+          className="relative lg:h-[600px] flex items-center justify-center perspective-1000"
+          initial={{ opacity: 0, scale: 0.9, x: 50 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
           transition={{ duration: 0.9, delay: 0.8, ease: "easeOut" }}
         >
@@ -300,17 +309,17 @@ const HomeScreen = () => {
             onMouseLeave={() => setIsHoveringCarousel(false)}
             style={{ boxShadow: `0 10px 40px -5px ${currentAccent}30` }}
           >
-            <AnimatePresence initial={false} mode="wait"> 
+            <AnimatePresence initial={false} mode="wait">
               {projects.map((project, index) => (
-                index === currentProject && ( 
+                index === currentProject && (
                   <motion.div
                     key={project.id}
                     className="absolute inset-0"
-                    initial={{ opacity: 0, rotateY: -90 }} 
-                    animate={{ opacity: 1, rotateY: 0 }} 
-                    exit={{ opacity: 0, rotateY: 90 }} 
-                    transition={{ duration: 0.7, ease: "easeInOut" }} 
-                    whileHover={{ scale: 1.02 }} 
+                    initial={{ opacity: 0, rotateY: -90 }}
+                    animate={{ opacity: 1, rotateY: 0 }}
+                    exit={{ opacity: 0, rotateY: 90 }}
+                    transition={{ duration: 0.7, ease: "easeInOut" }}
+                    whileHover={{ scale: 1.02 }}
                   >
                     {project.imagem && (
                       <Image
