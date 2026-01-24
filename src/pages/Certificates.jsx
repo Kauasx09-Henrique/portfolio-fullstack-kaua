@@ -29,7 +29,6 @@ const Certificates = () => {
                 />
             )
         }
-
         return <img src={fileUrl} alt="Certificado" className="cert-thumb" />
     }
 
