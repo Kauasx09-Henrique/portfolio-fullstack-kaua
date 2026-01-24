@@ -19,7 +19,6 @@ const Certificates = () => {
                 </div>
             )
         }
-
         if (typeof fileUrl === 'string' && fileUrl.toLowerCase().endsWith('.pdf')) {
             return (
                 <iframe
