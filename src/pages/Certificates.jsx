@@ -6,7 +6,7 @@ import java from '../../public/certificado/programaçao/java.pdf'
 import banco from '../../public/certificado/banco/IMPLEMENTANDO_Banco.pdf'
 import software from '../../public/certificado/hardaware/HARDWARE&SOFTWARE.pdf'
 import banco1 from '../../public/certificado/banco/ADMINISTRANDOBANCO.pdf'
-import IA from '../../public/certificado/ia/ia.pdf'
+import ia from '../../public/certificado/ia/ia.pdf'
 
 const Certificates = () => {
 
@@ -59,8 +59,8 @@ const Certificates = () => {
             name: 'IA: Fundamentos e Aplicações',
             issuer: 'IESB',
             date: '2025',
-            link: IA,
-            img: IA
+            link: ia,
+            img: ia
         },
         {
             name: 'Administrando bancos de dados MySQL',
