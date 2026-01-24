@@ -1,0 +1,69 @@
+.footer {
+    background-color: var(--bg-card);
+    padding: 3rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 6rem;
+    position: relative;
+    text-align: center;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    opacity: 0.7;
+    box-shadow: 0 0 15px var(--primary);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(to right, #fff, #a1a1aa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer-copy {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.footer-tech {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    opacity: 0.7;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+}
+
+.tech-highlight {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.tech-energy {
+    color: #eab308;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 2rem 0;
+        margin-top: 4rem;
+    }
+}

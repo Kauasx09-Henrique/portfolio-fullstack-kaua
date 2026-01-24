@@ -1,0 +1,122 @@
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.cert-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+}
+
+.cert-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(139, 92, 246, 0.3);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+}
+
+.cert-image {
+    height: 180px;
+    width: 100%;
+    background: #18181b;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cert-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    filter: brightness(0.9);
+}
+
+.cert-card:hover .cert-thumb {
+    transform: scale(1.05);
+    filter: brightness(1);
+}
+
+.cert-link-overlay {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 8px;
+    border-radius: 50%;
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cert-card:hover .cert-link-overlay {
+    opacity: 1;
+}
+
+.cert-link-overlay:hover {
+    background: var(--primary);
+}
+
+.cert-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    flex: 1;
+}
+
+.cert-header-slim {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.2rem;
+}
+
+.cert-icon-slim {
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.cert-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-main);
+    line-height: 1.4;
+}
+
+.cert-issuer {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cert-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    opacity: 0.7;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
