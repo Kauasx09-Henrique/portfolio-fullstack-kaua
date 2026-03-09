@@ -1,9 +1,8 @@
 import { motion } from 'framer-motion'
-import { Github, ExternalLink } from 'lucide-react'
+import { Github, ArrowUpRight } from 'lucide-react'
 import '../styles/projects.css'
 
 const Projects = () => {
-
     const projects = [
         {
             title: 'Bibliafy',
@@ -21,7 +20,7 @@ const Projects = () => {
             tags: ['React', 'Management', 'Web'],
             embedUrl: 'https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7374837349064671233?compact=1',
             links: {
-                repo: 'https://github.com/Kauasx09-Henrique', // Ajuste se tiver repo específico
+                repo: 'https://github.com/Kauasx09-Henrique',
                 linkedin: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7374837349064671233'
             }
         },
@@ -48,56 +47,57 @@ const Projects = () => {
     ]
 
     return (
-        <section id="projects" className="section-padding">
+        <section id="projects" className="projects-editorial-section">
             <div className="container">
                 <motion.div
+                    className="projects-editorial-header"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    style={{ marginBottom: '4rem' }}
                 >
-                    <h2>Projetos <span style={{ color: 'var(--primary)' }}>Destaque</span></h2>
-                    <p>Soluções reais desenvolvidas com código limpo.</p>
+                    <h2 className="editorial-main-title">Projetos</h2>
                 </motion.div>
 
-                <div className="projects-grid">
+                <div className="editorial-list">
                     {projects.map((project, index) => (
                         <motion.div
                             key={index}
-                            className="project-card"
-                            initial={{ opacity: 0, y: 30 }}
+                            className="editorial-item"
+                            initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
+                            viewport={{ once: true, margin: "-100px" }}
+                            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                         >
-                            {/* Área do Iframe do LinkedIn */}
-                            <div className="project-image">
-                                <iframe
-                                    src={project.embedUrl}
-                                    title={project.title}
-                                    allowFullScreen=""
-                                    loading="lazy"
-                                ></iframe>
-                            </div>
-
-                            <div className="project-content">
-                                <h3 className="project-title">{project.title}</h3>
-                                <p className="project-description">{project.description}</p>
-
-                                <div className="project-tags">
+                            <div className="editorial-meta">
+                                <span className="editorial-number">0{index + 1}</span>
+                                <h3 className="editorial-title">{project.title}</h3>
+                                <div className="editorial-tags">
                                     {project.tags.map(tag => (
-                                        <span key={tag} className="tag">{tag}</span>
+                                        <span key={tag} className="editorial-tag">{tag}</span>
                                     ))}
                                 </div>
+                            </div>
 
-                                <div className="project-links">
-                                    <a href={project.links.repo} target="_blank" rel="noopener noreferrer" className="project-link primary">
-                                        <Github size={18} /> Code
-                                    </a>
+                            <div className="editorial-visuals">
+                                <div className="editorial-iframe-wrapper">
+                                    <iframe
+                                        src={project.embedUrl}
+                                        title={project.title}
+                                        allowFullScreen=""
+                                        loading="lazy"
+                                    ></iframe>
+                                </div>
 
-                                    <a href={project.links.linkedin} target="_blank" rel="noopener noreferrer" className="project-link">
-                                        <ExternalLink size={18} /> Ver Post
-                                    </a>
+                                <div className="editorial-footer">
+                                    <p className="editorial-description">{project.description}</p>
+                                    <div className="editorial-links">
+                                        <a href={project.links.repo} target="_blank" rel="noopener noreferrer" className="editorial-link">
+                                            <Github size={18} strokeWidth={1.5} /> Source
+                                        </a>
+                                        <a href={project.links.linkedin} target="_blank" rel="noopener noreferrer" className="editorial-link primary-editorial-link">
+                                            <ArrowUpRight size={18} strokeWidth={1.5} /> Live Preview
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </motion.div>

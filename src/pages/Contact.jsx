@@ -1,48 +1,60 @@
 import { motion } from 'framer-motion'
-import { Mail, Linkedin, Github, Send } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 import '../styles/contact.css'
 
 const Contact = () => {
     return (
-        <section id="contact" className="section-padding contact-section">
+        <section id="contact" className="contact-master-section">
             <div className="container">
-                <motion.div
-                    className="contact-card"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                >
-                    <h2 className="contact-title">Vamos trabalhar juntos?</h2>
-                    <p className="contact-text">
-                        Se você tem uma ideia de projeto, uma vaga ou quer apenas trocar conhecimentos sobre desenvolvimento, minha caixa de entrada está sempre aberta.
-                    </p>
+                <div className="contact-master-wrapper">
+                    <motion.div
+                        className="contact-master-content"
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    >
+                        <p className="master-subtitle">PRÓXIMOS PASSOS</p>
+                        <h2 className="master-title">
+                            Tem um projeto?<br />
+                            <span className="title-outline">Vamos criar.</span>
+                        </h2>
+                    </motion.div>
 
-                    <div className="contact-actions">
-                        <a href="mailto:kauahenrique@example.com" className="contact-btn">
-                            <Send size={20} /> Enviar Mensagem
+                    <motion.div
+                        className="master-action-area"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+                    >
+                        <a href="mailto:kauahenriquesx09@gmail.com" className="master-circle-btn">
+                            <span className="circle-text">INICIAR<br />CONVERSA</span>
+                            <ArrowUpRight size={32} strokeWidth={1} className="circle-arrow" />
                         </a>
+                    </motion.div>
+                </div>
 
-                        <div className="social-links-container">
-                            <a 
-                                href="https://www.linkedin.com/in/kau%C3%A3henriquedev/" 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
-                                className="social-icon"
-                                aria-label="LinkedIn"
-                            >
-                                <Linkedin size={28} />
-                            </a>
-                            
-                            <a 
-                                href="https://github.com/Kauasx09-Henrique" 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
-                                className="social-icon"
-                                aria-label="GitHub"
-                            >
-                                <Github size={28} />
-                            </a>
-                        </div>
+                <motion.div
+                    className="master-footer"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, delay: 0.4 }}
+                >
+                    <div className="master-footer-left">
+                        <a href="mailto:kauahenriquesx09@gmail.com" className="master-direct-email">
+                            kauahenriquesx09@gmail.com
+                        </a>
+                    </div>
+
+                    <div className="master-footer-right">
+                        <a href="https://www.linkedin.com/in/kauãhenriquedev/" target="_blank" rel="noopener noreferrer" className="master-social-link">
+                            LinkedIn
+                        </a>
+                        <a href="https://github.com/Kauasx09-Henrique" target="_blank" rel="noopener noreferrer" className="master-social-link">
+                            GitHub
+                        </a>
                     </div>
                 </motion.div>
             </div>

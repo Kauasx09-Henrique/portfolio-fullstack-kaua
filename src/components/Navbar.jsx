@@ -1,71 +1,90 @@
-import { useState } from 'react'
-import { Menu, X, Code2 } from 'lucide-react'
+import { useState, useEffect } from 'react'
+import { Home, User, Code2, Folder, Award, Mail } from 'lucide-react'
+import { motion } from 'framer-motion'
 import '../styles/navbar.css'
 
 const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false)
+    const [scrolled, setScrolled] = useState(false)
+    const [active, setActive] = useState('Home')
+    const [hovered, setHovered] = useState(null)
 
-    const toggleMenu = () => setIsOpen(!isOpen)
+    useEffect(() => {
+        const handleScroll = () => setScrolled(window.scrollY > 40)
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
 
     const navLinks = [
-        { name: 'Home', href: '#home' },
-        { name: 'Sobre', href: '#about' },
-        { name: 'Tech', href: '#tech' },
-        { name: 'Projetos', href: '#projects' },
-        { name: 'Certificados', href: '#certificates' },
-        { name: 'Contato', href: '#contact' }
+        { name: 'Home', href: '#home', icon: Home },
+        { name: 'Sobre', href: '#about', icon: User },
+        { name: 'Tech', href: '#tech', icon: Code2 },
+        { name: 'Projetos', href: '#projects', icon: Folder },
+        { name: 'Certificados', href: '#certificates', icon: Award },
+        { name: 'Contato', href: '#contact', icon: Mail }
     ]
 
     return (
-        <nav className="navbar">
-            <div className="container">
-                <div className="nav-container">
-
-                    <a href="#" className="logo">
-                        <Code2 size={32} color="var(--primary)" />
-                        Kauã<span>.dev</span>
-                    </a>
-
-                    {/* Menu Desktop */}
-                    <div className="nav-links">
-                        {navLinks.map((link) => (
-                            <a
-                                key={link.name}
-                                href={link.href}
-                                className="nav-link"
-                            >
-                                {link.name}
-                            </a>
-                        ))}
-                    </div>
-
-                    {/* Botão Mobile */}
-                    <button
-                        className="mobile-toggle"
-                        onClick={toggleMenu}
-                        aria-label="Menu"
-                    >
-                        {isOpen ? <X size={28} /> : <Menu size={28} />}
-                    </button>
-                </div>
-            </div>
-
-            {/* Menu Mobile */}
-            {isOpen && (
-                <div className="mobile-menu">
+        <>
+            <motion.header
+                className={`navbar-desktop ${scrolled ? 'scrolled' : ''}`}
+                initial={{ y: -100 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            >
+                <nav className="desktop-pill" onMouseLeave={() => setHovered(null)}>
                     {navLinks.map((link) => (
                         <a
                             key={link.name}
                             href={link.href}
-                            className="mobile-link"
-                            onClick={toggleMenu}
+                            className="desktop-item"
+                            onMouseEnter={() => setHovered(link.name)}
+                            onClick={() => setActive(link.name)}
                         >
-                            {link.name}
+                            {hovered === link.name && (
+                                <motion.div
+                                    layoutId="nav-pill"
+                                    className="desktop-hover-pill"
+                                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                                />
+                            )}
+                            <span className="desktop-item-text">{link.name}</span>
                         </a>
                     ))}
+                </nav>
+            </motion.header>
+
+            <motion.nav
+                className="mobile-dock"
+                initial={{ y: 100 }}
+                animate={{ y: 0 }}
+                transition={{ type: "spring", stiffness: 260, damping: 20 }}
+            >
+                <div className="dock-container">
+                    {navLinks.map((link) => {
+                        const Icon = link.icon
+                        const isActive = active === link.name
+
+                        return (
+                            <a
+                                key={link.name}
+                                href={link.href}
+                                className={`dock-item ${isActive ? 'active' : ''}`}
+                                onClick={() => setActive(link.name)}
+                            >
+                                <Icon size={22} strokeWidth={isActive ? 2 : 1.5} />
+                                {isActive && (
+                                    <motion.div
+                                        layoutId="dock-indicator"
+                                        className="dock-indicator"
+                                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                                    />
+                                )}
+                            </a>
+                        )
+                    })}
                 </div>
-            )}
-        </nav>
+            </motion.nav>
+        </>
     )
 }
 

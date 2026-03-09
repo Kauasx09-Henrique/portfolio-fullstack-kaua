@@ -9,88 +9,76 @@ const Home = () => {
     }
 
     return (
-        <section id="home" className="home-section">
-            <div className="home-bg-minimal" />
+        <section id="home" className="home-white-premium">
+            <div className="white-grid-bg" />
+            <div className="white-gradient-overlay" />
 
-            <div className="container">
-                <div className="home-content">
+            <div className="container relative-z">
+                <div className="premium-content">
 
-                    <motion.span
-                        className="role-label"
+                    <motion.div
                         variants={fadeUp}
                         initial="hidden"
                         animate="visible"
+                        className="premium-badge"
                     >
-                        Fullstack Developer
-                    </motion.span>
+                        <span className="pulse-dot"></span>
+                        Disponível para novos desafios
+                    </motion.div>
 
                     <motion.h1
-                        className="hero-title-minimal"
+                        className="premium-title"
                         variants={fadeUp}
                         initial="hidden"
                         animate="visible"
                         transition={{ delay: 0.1 }}
                     >
-                        Kauã Henrique.
+                        Kauã Henrique
                     </motion.h1>
 
-                    <motion.p
-                        className="hero-description-minimal"
+                    <motion.h2
+                        className="premium-subtitle"
                         variants={fadeUp}
                         initial="hidden"
                         animate="visible"
                         transition={{ delay: 0.2 }}
                     >
-                        Estagiário no SENSIPAM e estudante de ADS.
-                        Criando o futuro com <span style={{ color: 'var(--text-main)' }}>React</span>,
-                        <span style={{ color: 'var(--text-main)' }}> NestJS</span> e
-                        <span style={{ color: 'var(--text-main)' }}> Mobile</span>.
-                    </motion.p>
+                        Desenvolvedor Full Stack
+                    </motion.h2>
 
-                    <motion.div
-                        className="actions-container"
+                    <motion.p
+                        className="premium-description"
                         variants={fadeUp}
                         initial="hidden"
                         animate="visible"
                         transition={{ delay: 0.3 }}
                     >
-                        <a href="#projects" className="cta-link">
-                            Ver Projetos <ArrowRight size={20} />
+                        Estagiário no SENSIPAM e estudante de ADS. Especializado em construir arquiteturas escaláveis e experiências únicas utilizando React, NestJS e React Native.
+                    </motion.p>
+
+                    <motion.div
+                        className="premium-actions"
+                        variants={fadeUp}
+                        initial="hidden"
+                        animate="visible"
+                        transition={{ delay: 0.4 }}
+                    >
+                        <a href="#projects" className="premium-btn-primary">
+                            Explorar Projetos <ArrowRight size={18} className="btn-icon" />
                         </a>
 
-                        <div style={{ width: '1px', height: '24px', background: 'rgba(255,255,255,0.1)', display: 'inline-block' }}></div>
-
-                        <div className="social-group">
-                            <a
-                                href="https://github.com/Kauasx09-Henrique"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="icon-btn"
-                                aria-label="GitHub"
-                            >
+                        <div className="premium-socials">
+                            <a href="https://github.com/Kauasx09-Henrique" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                                 <Github size={22} />
                             </a>
-
-                            <a
-                                href="https://linkedin.com"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="icon-btn"
-                                aria-label="LinkedIn"
-                            >
+                            <a href="https://www.linkedin.com/in/kauãhenriquedev/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                                 <Linkedin size={22} />
                             </a>
-
-                            <a
-                                href="mailto:kauahenrique@example.com"
-                                className="icon-btn"
-                                aria-label="Email"
-                            >
+                            <a href="mailto:kauahenriquesx09@gmail.com" aria-label="Email">
                                 <Mail size={22} />
                             </a>
                         </div>
                     </motion.div>
-
                 </div>
             </div>
         </section>

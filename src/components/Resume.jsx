@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Eye, Download, X, Code2, Headset, FileText } from 'lucide-react'
+import { Eye, Download, X } from 'lucide-react'
 import '../styles/resume.css'
 
 const Resume = () => {
@@ -29,109 +29,88 @@ const Resume = () => {
     }
 
     return (
-        <section className="section-padding resume-section">
-            <div className="container">
-
+        <section id="resume" className="resume-editorial-section">
+            <div className="resume-split-container">
                 <motion.div
-                    className="resume-card-container"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    className="resume-half dev-half"
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
+                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 >
-                    <div className="resume-header">
-                        <h2>Currículos <span style={{ color: 'var(--primary)' }}>Profissionais</span></h2>
-                        <p>Escolha a versão que melhor se adapta à oportunidade.</p>
-                    </div>
-
-                    <div className="resume-split">
-
-                        <motion.div
-                            className="resume-option dev"
-                            whileHover={{ scale: 1.02 }}
-                        >
-                            <div className="role-icon">
-                                <Code2 size={28} />
-                            </div>
-                            <h3 className="role-title">Desenvolvedor Fullstack</h3>
-                            <p className="role-desc">
-                                Focado em React, Node.js, Arquitetura de Software e Projetos Web/Mobile.
-                            </p>
-
-                            <div className="btn-group">
-                                <button onClick={() => openModal(devPdf, 'Currículo Desenvolvedor')} className="btn-action btn-eye">
-                                    <Eye size={18} /> Visualizar
-                                </button>
-                                <a href={devPdf} download className="btn-action btn-down">
-                                    <Download size={18} /> Baixar PDF
-                                </a>
-                            </div>
-                        </motion.div>
-
-                        <motion.div
-                            className="resume-option support"
-                            whileHover={{ scale: 1.02 }}
-                        >
-                            <div className="role-icon">
-                                <Headset size={28} />
-                            </div>
-                            <h3 className="role-title">Suporte Técnico N1/N2</h3>
-                            <p className="role-desc">
-                                Experiência em Hardware, Redes, Atendimento ao Cliente e Resolução de Problemas.
-                            </p>
-
-                            <div className="btn-group">
-                                <button onClick={() => openModal(supportPdf, 'Currículo Suporte')} className="btn-action btn-eye">
-                                    <Eye size={18} /> Visualizar
-                                </button>
-                                <a href={supportPdf} download className="btn-action btn-down">
-                                    <Download size={18} /> Baixar PDF
-                                </a>
-                            </div>
-                        </motion.div>
-
+                    <div className="resume-content-wrapper">
+                        <span className="resume-label">Perfil 01</span>
+                        <h2 className="resume-massive-title">Desenvolvedor<br />Full Stack</h2>
+                        <p className="resume-minimal-desc">
+                            Focado em React, Node.js, arquitetura escalável e desenvolvimento de soluções Web e Mobile de alta performance.
+                        </p>
+                        <div className="resume-action-row">
+                            <button onClick={() => openModal(devPdf, 'Desenvolvedor Full Stack')} className="btn-editorial-primary">
+                                Visualizar <Eye size={18} strokeWidth={1.5} />
+                            </button>
+                            <a href={devPdf} download className="btn-editorial-secondary">
+                                Baixar <Download size={18} strokeWidth={1.5} />
+                            </a>
+                        </div>
                     </div>
                 </motion.div>
 
+                <motion.div
+                    className="resume-half support-half"
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+                >
+                    <div className="resume-content-wrapper">
+                        <span className="resume-label">Perfil 02</span>
+                        <h2 className="resume-massive-title">Suporte<br />Técnico</h2>
+                        <p className="resume-minimal-desc">
+                            Experiência sólida em hardware, infraestrutura de redes e resolução eficiente de problemas N1/N2.
+                        </p>
+                        <div className="resume-action-row">
+                            <button onClick={() => openModal(supportPdf, 'Suporte Técnico N1/N2')} className="btn-editorial-primary">
+                                Visualizar <Eye size={18} strokeWidth={1.5} />
+                            </button>
+                            <a href={supportPdf} download className="btn-editorial-secondary">
+                                Baixar <Download size={18} strokeWidth={1.5} />
+                            </a>
+                        </div>
+                    </div>
+                </motion.div>
             </div>
 
             <AnimatePresence>
                 {activePdf && (
                     <motion.div
-                        className="modal-backdrop"
+                        className="editorial-modal-backdrop"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
+                        transition={{ duration: 0.4 }}
                         onClick={closeModal}
                     >
                         <motion.div
-                            className="modal-content"
-                            initial={{ scale: 0.9, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            exit={{ scale: 0.9, opacity: 0 }}
+                            className="editorial-modal-container"
+                            initial={{ y: "100%" }}
+                            animate={{ y: 0 }}
+                            exit={{ y: "100%" }}
+                            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                             onClick={(e) => e.stopPropagation()}
                         >
-                            <div className="pdf-header">
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 'bold' }}>
-                                    <FileText size={18} color="var(--primary)" /> {activeTitle}
-                                </div>
-                                <button className="close-modal-btn" onClick={closeModal} style={{ background: 'transparent', border: 'none', color: 'white', cursor: 'pointer' }}>
-                                    <X size={24} />
+                            <div className="editorial-modal-header">
+                                <h3 className="editorial-modal-title">{activeTitle}</h3>
+                                <button className="editorial-modal-close" onClick={closeModal}>
+                                    FECHAR <X size={20} strokeWidth={1} />
                                 </button>
                             </div>
-
-                            <object
-                                data={activePdf}
-                                type="application/pdf"
-                                className="pdf-viewer"
-                            >
-                                <div style={{ height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'var(--text-muted)', gap: '1rem' }}>
-                                    <p>Seu navegador não suporta visualização de PDF.</p>
-                                    <a href={activePdf} download className="btn-view" style={{ background: 'var(--primary)', padding: '10px 20px', borderRadius: '8px', color: 'white', textDecoration: 'none' }}>
-                                        Baixar Arquivo
-                                    </a>
-                                </div>
-                            </object>
-
+                            <div className="editorial-modal-body">
+                                <iframe
+                                    src={`${activePdf}#toolbar=0&navpanes=0&scrollbar=0`}
+                                    className="editorial-pdf-viewer"
+                                    title={activeTitle}
+                                />
+                            </div>
                         </motion.div>
                     </motion.div>
                 )}

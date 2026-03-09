@@ -1,19 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 :root {
-  font-family: 'Outfit', sans-serif;
-  line-height: 1.6;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.5;
   font-weight: 400;
 
-  --bg-dark: #0f0f11;
-  --bg-card: #18181b;
-  --primary: #8b5cf6;
-  --primary-hover: #7c3aed;
-  --accent: #ef4444;
-  --text-main: #f4f4f5;
-  --text-muted: #a1a1aa;
-
-  --fs-h1: clamp(2.5rem, 5vw, 4.5rem);
-  --fs-h2: clamp(2rem, 4vw, 3rem);
-  --fs-body: 1rem;
+  --bg-main: #ffffff;
+  --text-main: #000000;
+  --text-muted: #71717a;
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(0, 0, 0, 0.04);
 }
 
 * {
@@ -24,14 +20,21 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
-  background-color: var(--bg-dark);
+  background-color: var(--bg-main);
   color: var(--text-main);
   min-height: 100vh;
   overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--text-main);
+  color: var(--bg-main);
 }
 
 h1,
@@ -41,31 +44,17 @@ h4,
 h5,
 h6 {
   font-weight: 700;
-  line-height: 1.1;
   color: var(--text-main);
-}
-
-h1 {
-  font-size: var(--fs-h1);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-
-h2 {
-  font-size: var(--fs-h2);
-  margin-bottom: 1.5rem;
+  letter-spacing: -0.03em;
 }
 
 p {
   color: var(--text-muted);
-  margin-bottom: 1rem;
-  font-size: var(--fs-body);
 }
 
 a {
   color: inherit;
   text-decoration: none;
-  transition: color 0.2s;
 }
 
 ul {
@@ -81,51 +70,29 @@ img {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
 }
 
-.section-padding {
-  padding: 6rem 0;
-}
-
-.grid-responsive {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
-button,
-.btn {
+button {
   cursor: pointer;
   border: none;
+  background: none;
   font-family: inherit;
-  font-weight: 600;
-  transition: all 0.2s ease;
-}
-
-button:active {
-  transform: scale(0.96);
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-dark);
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 4px;
+  background: #e4e4e7;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary);
-}
-
-@media (max-width: 768px) {
-  .section-padding {
-    padding: 3rem 0;
-  }
+  background: #d4d4d8;
 }

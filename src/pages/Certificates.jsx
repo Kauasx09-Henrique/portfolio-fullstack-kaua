@@ -1,5 +1,6 @@
-import { motion } from 'framer-motion'
-import { Award, Calendar, Building, ExternalLink } from 'lucide-react'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { ArrowUpRight, FileX } from 'lucide-react'
 import '../styles/certificates.css'
 
 import java from '../../public/certificado/programaçao/java.pdf'
@@ -9,28 +10,7 @@ import banco1 from '../../public/certificado/banco/ADMINISTRANDOBANCO.pdf'
 import ia from './ia.pdf'
 
 const Certificates = () => {
-
-    const getCertImage = (fileUrl) => {
-        if (!fileUrl) {
-            return (
-                <div style={{ width: '100%', height: '100%', background: 'linear-gradient(45deg, #27272a, #18181b)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '0.5rem', color: '#52525b' }}>
-                    <Award size={32} opacity={0.5} />
-                    <span style={{ fontWeight: 600, fontSize: '0.8rem' }}>SEM ARQUIVO</span>
-                </div>
-            )
-        }
-        if (typeof fileUrl === 'string' && fileUrl.toLowerCase().endsWith('.pdf')) {
-            return (
-                <iframe
-                    src={`${fileUrl}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
-                    className="cert-thumb"
-                    title="Certificado PDF"
-                    style={{ border: 'none', pointerEvents: 'none', overflow: 'hidden' }} // pointerEvents evita clique no PDF, mantendo comportamento de card
-                />
-            )
-        }
-        return <img src={fileUrl} alt="Certificado" className="cert-thumb" />
-    }
+    const [activeIndex, setActiveIndex] = useState(0)
 
     const certificates = [
         {
@@ -48,7 +28,7 @@ const Certificates = () => {
             img: banco
         },
         {
-            name: 'Fundamentos de TI: Hardware & Software',
+            name: 'Fundamentos: Hardware & Software',
             issuer: 'Fundação Bradesco',
             date: '2025',
             link: software,
@@ -62,69 +42,99 @@ const Certificates = () => {
             img: ia
         },
         {
-            name: 'Administrando bancos de dados MySQL',
+            name: 'Administrando MySQL',
             issuer: 'Fundação Bradesco',
             date: '2025',
             link: banco1,
             img: banco1
         }
-
     ]
 
+    const renderViewer = (cert) => {
+        if (!cert.img) {
+            return (
+                <div className="viewer-light-empty">
+                    <FileX size={40} strokeWidth={1.5} />
+                    <span>Indisponível</span>
+                </div>
+            )
+        }
+
+        if (typeof cert.img === 'string' && cert.img.toLowerCase().endsWith('.pdf')) {
+            return (
+                <iframe
+                    src={`${cert.img}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
+                    className="viewer-light-iframe"
+                    title={cert.name}
+                />
+            )
+        }
+
+        return <img src={cert.img} alt={cert.name} className="viewer-light-image" />
+    }
+
     return (
-        <section id="certificates" className="section-padding">
+        <section id="certificates" className="cert-light-section">
             <div className="container">
                 <motion.div
+                    className="cert-light-header"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    style={{ marginBottom: '4rem' }}
                 >
-                    <h2>Meus <span style={{ color: 'var(--primary)' }}>Certificados</span></h2>
-                    <p>Comprovações de aprendizado contínuo.</p>
+                    <h2 className="cert-light-title">Certificações.</h2>
                 </motion.div>
 
-                <div className="certificates-grid">
-                    {certificates.map((cert, index) => (
-                        <motion.div
-                            key={index}
-                            className="cert-card"
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                        >
-                            <div className="cert-image">
-                                {getCertImage(cert.img)}
+                <div className="cert-light-layout">
+                    <div className="cert-light-list">
+                        {certificates.map((cert, index) => {
+                            const isActive = activeIndex === index
 
-                                {cert.link && cert.link !== '#' && (
-                                    <a href={cert.link} target="_blank" rel="noopener noreferrer" className="cert-link-overlay">
-                                        <ExternalLink size={18} />
-                                    </a>
-                                )}
-                            </div>
-
-                            <div className="cert-content">
-                                <div className="cert-header-slim">
-                                    <div className="cert-icon-slim">
-                                        <Award size={16} /> Certificado
+                            return (
+                                <motion.div
+                                    key={index}
+                                    className={`cert-light-item ${isActive ? 'is-active' : ''}`}
+                                    onMouseEnter={() => setActiveIndex(index)}
+                                    onClick={() => setActiveIndex(index)}
+                                    initial={{ opacity: 0, x: -20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true, margin: "-50px" }}
+                                    transition={{ delay: index * 0.05, duration: 0.4 }}
+                                >
+                                    <div className="cert-light-content">
+                                        <span className="cert-light-number">0{index + 1}</span>
+                                        <h3 className="cert-light-name">{cert.name}</h3>
                                     </div>
-                                </div>
+                                    <div className="cert-light-meta">
+                                        <span className="cert-light-issuer">{cert.issuer}</span>
+                                        <span className="cert-light-date">{cert.date}</span>
+                                        {isActive && cert.link && (
+                                            <a href={cert.link} target="_blank" rel="noopener noreferrer" className="cert-light-link">
+                                                <ArrowUpRight size={20} strokeWidth={2} />
+                                            </a>
+                                        )}
+                                    </div>
+                                </motion.div>
+                            )
+                        })}
+                    </div>
 
-                                <h3 className="cert-title">{cert.name}</h3>
-
-                                <div className="cert-issuer">
-                                    <Building size={14} />
-                                    {cert.issuer}
-                                </div>
-
-                                <div className="cert-date">
-                                    <Calendar size={14} />
-                                    Concluído em {cert.date}
-                                </div>
-                            </div>
-                        </motion.div>
-                    ))}
+                    <div className="cert-light-viewer">
+                        <div className="viewer-light-sticky">
+                            <AnimatePresence mode="wait">
+                                <motion.div
+                                    key={activeIndex}
+                                    className="viewer-light-wrapper"
+                                    initial={{ opacity: 0, scale: 0.98, filter: 'blur(4px)' }}
+                                    animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+                                    exit={{ opacity: 0, scale: 0.98, filter: 'blur(4px)' }}
+                                    transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                                >
+                                    {renderViewer(certificates[activeIndex])}
+                                </motion.div>
+                            </AnimatePresence>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
