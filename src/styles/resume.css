@@ -236,3 +236,128 @@
         padding: 1.5rem;
     }
 }
+
+.custom-scroll {
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #333333 #000000;
+}
+
+.custom-scroll::-webkit-scrollbar {
+    width: 8px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+    background-color: #333333;
+    border-radius: 10px;
+}
+
+.native-cv-document {
+    background-color: #ffffff;
+    color: #000000;
+    max-width: 850px;
+    margin: 3rem auto;
+    padding: 4rem 5rem;
+    font-family: 'Inter', 'Helvetica Neue', sans-serif;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+}
+
+.cv-header {
+    text-align: center;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+}
+
+.cv-name {
+    font-size: 2rem;
+    font-weight: 900;
+    margin: 0 0 0.5rem 0;
+    letter-spacing: 0.05em;
+}
+
+.cv-role {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #52525b;
+    margin: 0 0 1rem 0;
+}
+
+.cv-contact {
+    font-size: 0.9rem;
+    color: #71717a;
+    margin: 0;
+}
+
+.cv-section {
+    margin-bottom: 2.5rem;
+}
+
+.cv-section-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid #e4e4e7;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.cv-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #27272a;
+    margin: 0;
+    text-align: justify;
+}
+
+.cv-text-margin {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #27272a;
+    margin: 0.5rem 0 0 0;
+}
+
+.cv-list {
+    margin: 0;
+    padding-left: 1.2rem;
+    color: #27272a;
+}
+
+.cv-list li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.4rem;
+}
+
+.cv-block {
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #27272a;
+}
+
+.cv-block-header {
+    font-size: 1.05rem;
+}
+
+.cv-block-subheader {
+    color: #52525b;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .native-cv-document {
+        padding: 2rem 1.5rem;
+        margin: 0;
+        box-shadow: none;
+    }
+
+    .cv-name {
+        font-size: 1.5rem;
+    }
+}

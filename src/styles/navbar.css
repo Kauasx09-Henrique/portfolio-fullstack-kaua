@@ -68,60 +68,62 @@
     }
 
     .mobile-dock {
-        display: flex;
         position: fixed;
-        bottom: max(24px, env(safe-area-inset-bottom));
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 9999;
-        width: 100%;
-        max-width: 380px;
+        bottom: 2rem;
+        left: 0;
+        right: 0;
+        display: flex;
         justify-content: center;
-        padding: 0 16px;
+        z-index: 9999;
+        pointer-events: none;
+        padding: 0 1rem;
     }
 
     .dock-container {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        background-color: rgba(15, 15, 17, 0.75);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        padding: 12px 16px;
+        gap: 0.5rem;
+        background-color: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        padding: 0.75rem 1rem;
         border-radius: 100px;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        pointer-events: auto;
+        max-width: 100%;
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .dock-container::-webkit-scrollbar {
+        display: none;
     }
 
     .dock-item {
         position: relative;
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
-        color: rgba(255, 255, 255, 0.4);
         width: 44px;
         height: 44px;
         border-radius: 50%;
+        color: #71717a;
         transition: color 0.3s ease;
-        -webkit-tap-highlight-color: transparent;
+        flex-shrink: 0;
     }
 
-    .dock-item.active {
+    .dock-item.active,
+    .dock-item:hover {
         color: #ffffff;
-    }
-
-    .dock-item:active {
-        transform: scale(0.9);
     }
 
     .dock-indicator {
         position: absolute;
-        bottom: 2px;
-        width: 4px;
-        height: 4px;
-        background-color: #ffffff;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.05);
         border-radius: 50%;
+        z-index: -1;
     }
 }

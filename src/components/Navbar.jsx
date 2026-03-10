@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Home, User, Code2, Folder, Award, Mail } from 'lucide-react'
+import { Home, User, Code2, Folder, Award, Mail, FileText, Activity, Map } from 'lucide-react'
 import { motion } from 'framer-motion'
 import '../styles/navbar.css'
 
@@ -17,9 +17,12 @@ const Navbar = () => {
     const navLinks = [
         { name: 'Home', href: '#home', icon: Home },
         { name: 'Sobre', href: '#about', icon: User },
+        { name: 'Trajetória', href: '#journey', icon: Map },
         { name: 'Tech', href: '#tech', icon: Code2 },
         { name: 'Projetos', href: '#projects', icon: Folder },
+        { name: 'Métricas', href: '#githubmetrics', icon: Activity },
         { name: 'Certificados', href: '#certificates', icon: Award },
+        { name: 'Currículos', href: '#resume', icon: FileText },
         { name: 'Contato', href: '#contact', icon: Mail }
     ]
 
@@ -36,7 +39,7 @@ const Navbar = () => {
                         <a
                             key={link.name}
                             href={link.href}
-                            className="desktop-item"
+                            className={`desktop-item ${active === link.name ? 'active' : ''}`}
                             onMouseEnter={() => setHovered(link.name)}
                             onClick={() => setActive(link.name)}
                         >

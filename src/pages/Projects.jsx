@@ -5,6 +5,16 @@ import '../styles/projects.css'
 const Projects = () => {
     const projects = [
         {
+            title: 'Marcador',
+            description: 'App mobile Fullstack para catalogação social e gamificada de livros. Escaneamento de ISBN com Smart Fallback, sincronização real-time no Modo Duo e animações nativas a 60fps.',
+            tags: ['React Native', 'Node.js', 'PostgreSQL'],
+            embedUrl: 'https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7422745029611315200?compact=1',
+            links: {
+                repo: 'https://lnkd.in/dSWp6H3f',
+                linkedin: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7422745029611315200'
+            }
+        },
+        {
             title: 'Bibliafy',
             description: 'Plataforma completa para leitura bíblica e devocionais. Sistema Fullstack composto por API robusta e interface web moderna.',
             tags: ['React', 'Node.js', 'Fullstack'],

@@ -1,0 +1,158 @@
+.metrics-telemetry-section {
+    background-color: #000000;
+    padding: 8rem 0;
+    font-family: 'Inter', system-ui, sans-serif;
+    color: #ffffff;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.metrics-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.metrics-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    margin: 0;
+    line-height: 1;
+}
+
+.metrics-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: #a1a1aa;
+    letter-spacing: 0.1em;
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #10b981;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.metric-card {
+    background-color: #050505;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: border-color 0.4s ease;
+}
+
+.metric-card:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.card-span-full {
+    grid-column: 1 / -1;
+}
+
+.metric-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: #71717a;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 3rem;
+}
+
+.metric-value {
+    font-size: clamp(4rem, 8vw, 6rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    color: #ffffff;
+}
+
+.metric-latest-repo {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.repo-name {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+}
+
+.repo-lang {
+    font-family: monospace;
+    font-size: 1rem;
+    color: #000000;
+    background-color: #ffffff;
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .metrics-telemetry-section {
+        padding: 5rem 0;
+    }
+
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .metric-card {
+        padding: 2rem;
+    }
+
+    .card-span-full {
+        grid-column: 1;
+    }
+
+    .metric-latest-repo {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

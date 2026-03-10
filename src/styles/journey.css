@@ -1,0 +1,127 @@
+.journey-dark-section {
+    background-color: #000000;
+    padding: 10rem 0;
+    font-family: 'Inter', system-ui, sans-serif;
+    color: #ffffff;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.journey-header {
+    margin-bottom: 6rem;
+}
+
+.journey-title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    margin: 0;
+}
+
+.journey-timeline {
+    display: flex;
+    flex-direction: column;
+}
+
+.journey-item {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 4rem;
+    padding: 4rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    transition: background-color 0.4s ease;
+}
+
+.journey-item:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.journey-item:hover {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
+}
+
+.journey-year-col {
+    display: flex;
+    align-items: flex-start;
+}
+
+.journey-year {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    opacity: 0.9;
+}
+
+.journey-content-col {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.journey-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.journey-text-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.journey-role {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    margin: 0 0 0.5rem 0;
+}
+
+.journey-location {
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: #a1a1aa;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+}
+
+.journey-desc {
+    font-size: 1.1rem;
+    color: #71717a;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0;
+    font-weight: 400;
+}
+
+@media (max-width: 900px) {
+    .journey-dark-section {
+        padding: 6rem 0;
+    }
+
+    .journey-item {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding: 3rem 0;
+    }
+
+    .journey-year {
+        font-size: 2.5rem;
+    }
+
+    .journey-content-col {
+        gap: 1.5rem;
+    }
+}
