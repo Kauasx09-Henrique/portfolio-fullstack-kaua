@@ -7,7 +7,10 @@ import java from '../../public/certificado/programaçao/java.pdf'
 import banco from '../../public/certificado/banco/IMPLEMENTANDO_Banco.pdf'
 import software from '../../public/certificado/hardaware/HARDWARE&SOFTWARE.pdf'
 import banco1 from '../../public/certificado/banco/ADMINISTRANDOBANCO.pdf'
-import ia from './ia.pdf'
+import ia from '../../public/certificado/ia/IA.pdf'
+import cyber from '../../public/certificado/cyber/Certificado-Cyber.pdf'
+
+import { link } from 'framer-motion/client'
 
 const Certificates = () => {
     const [activeIndex, setActiveIndex] = useState(0)
@@ -47,6 +50,14 @@ const Certificates = () => {
             date: '2025',
             link: banco1,
             img: banco1
+        },
+        {
+            name: 'Introdução a Cybersecurity',
+            issuer: 'Cisco Networking Academy',
+            date: '2026',
+            link: cyber,
+            img: cyber
+
         }
     ]
 
