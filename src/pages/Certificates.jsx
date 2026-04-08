@@ -10,7 +10,14 @@ import banco1 from '../../public/certificado/banco/ADMINISTRANDOBANCO.pdf'
 import ia from '../../public/certificado/ia/IA.pdf'
 import cyber from '../../public/certificado/cyber/Certificado-Cyber.pdf'
 
-import { link } from 'framer-motion/client'
+//AWS
+import aws from '/public/certificado/aws/Fundamento da Nuvem AWS.jpg'
+import nuvem from '/public/certificado/aws/Nuvem e IA Para Empresas.jpg'
+import cloud from '/public/certificado/aws/AWS Cloud Practitioner PT.jpg'
+import fundamentos from '/public/certificado/aws/Fundamentos de Nuvem.jpg'
+
+
+import { form, link } from 'framer-motion/client'
 
 const Certificates = () => {
     const [activeIndex, setActiveIndex] = useState(0)
@@ -58,7 +65,36 @@ const Certificates = () => {
             link: cyber,
             img: cyber
 
-        }
+        },
+        {
+            name: 'Nuvem e IA Para Empresas',
+            issuer: 'AWS',
+            date: '2026',
+            link: null,
+            img: nuvem
+
+        },
+        {
+            name: 'AWS Cloud Practitioner',
+            issuer: 'AWS',
+            date: '2026',
+            link: null,
+            img: cloud
+        },
+        {
+            name: 'Fundamentos de Nuvem',
+            issuer: 'AWS',
+            date: '2026',
+            link: null,
+            img: fundamentos
+        },
+        {
+            name: 'Fundamentos de Nuvem AWS',
+            issuer: 'AWS',
+            date: '2026',
+            link: null,
+            img: aws
+        },
     ]
 
     const renderViewer = (cert) => {
