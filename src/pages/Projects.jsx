@@ -5,6 +5,16 @@ import '../styles/projects.css'
 const Projects = () => {
     const projects = [
         {
+            title: 'Cofre de Senhas',
+            description: 'Sistema Fullstack de alta segurança para gerenciamento de credenciais. Backend robusto construído com Java 17, Spring Boot e Spring Security (JWT), acoplado a uma interface React minimalista com animações fluidas.',
+            tags: ['Java', 'Spring Boot', 'React', 'Security'],
+            embedUrl: 'https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7448401894865276928?compact=1',
+            links: {
+                repo: 'https://lnkd.in/gx_ApngT',
+                linkedin: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7448401894865276928'
+            }
+        },
+        {
             title: 'Marcador',
             description: 'App mobile Fullstack para catalogação social e gamificada de livros. Escaneamento de ISBN com Smart Fallback, sincronização real-time no Modo Duo e animações nativas a 60fps.',
             tags: ['React Native', 'Node.js', 'PostgreSQL'],

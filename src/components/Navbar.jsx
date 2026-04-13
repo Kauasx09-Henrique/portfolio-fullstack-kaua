@@ -20,7 +20,7 @@ const Navbar = () => {
         { name: 'Trajetória', href: '#journey', icon: Map },
         { name: 'Tech', href: '#tech', icon: Code2 },
         { name: 'Projetos', href: '#projects', icon: Folder },
-        { name: 'Métricas', href: '#githubmetrics', icon: Activity },
+        { name: 'Métricas', href: '#GithubMetrics', icon: Activity },
         { name: 'Certificados', href: '#certificates', icon: Award },
         { name: 'Currículos', href: '#resume', icon: FileText },
         { name: 'Contato', href: '#contact', icon: Mail }
