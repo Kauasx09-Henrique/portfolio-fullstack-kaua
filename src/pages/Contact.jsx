@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight, Mail, Linkedin, Github } from 'lucide-react'
 import '../styles/contact.css'
 
 const Contact = () => {
@@ -43,17 +43,17 @@ const Contact = () => {
                     transition={{ duration: 1, delay: 0.4 }}
                 >
                     <div className="master-footer-left">
-                        <a href="mailto:kauahenriquesx09@gmail.com" className="master-direct-email">
-                            kauahenriquesx09@gmail.com
+                        <a href="mailto:kauahenriquesx09@gmail.com" className="master-icon-link" aria-label="Enviar E-mail">
+                            <Mail size={38} strokeWidth={1.2} />
                         </a>
                     </div>
 
                     <div className="master-footer-right">
-                        <a href="https://www.linkedin.com/in/kauãhenriquedev/" target="_blank" rel="noopener noreferrer" className="master-social-link">
-                            LinkedIn
+                        <a href="https://www.linkedin.com/in/kauãhenriquedev/" target="_blank" rel="noopener noreferrer" className="master-icon-link" aria-label="LinkedIn">
+                            <Linkedin size={38} strokeWidth={1.2} />
                         </a>
-                        <a href="https://github.com/Kauasx09-Henrique" target="_blank" rel="noopener noreferrer" className="master-social-link">
-                            GitHub
+                        <a href="https://github.com/Kauasx09-Henrique" target="_blank" rel="noopener noreferrer" className="master-icon-link" aria-label="GitHub">
+                            <Github size={38} strokeWidth={1.2} />
                         </a>
                     </div>
                 </motion.div>

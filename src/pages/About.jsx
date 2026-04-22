@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Briefcase, GraduationCap, Code, ArrowUpRight } from 'lucide-react'
 import '../styles/about.css'
-import meImg from '../../public/me/kaua.jpg'
+import meImg from '../../public/me/Foto-Profissional.jpg'
 
 const About = () => {
     return (
@@ -44,7 +44,7 @@ const About = () => {
                             Sou <strong>Kauã Henrique</strong>, Desenvolvedor Full Stack especializado em Backend (Node.js, NestJS, PHP) e Mobile (React Native). Construo arquiteturas escaláveis e banco de dados otimizados.
                         </p>
                         <p>
-                            Atualmente, aplico minhas habilidades como <strong>Estagiário no SENSIPAM</strong>, focado no ecossistema interno, e estou no 5º semestre de Análise e Desenvolvimento de Sistemas.
+                            Atualmente, aplico minhas habilidades como <strong>Estagiário no CENSIPAM</strong>, focado no ecossistema interno, e estou no 5º semestre de Análise e Desenvolvimento de Sistemas.
                         </p>
                     </motion.div>
 
@@ -58,7 +58,7 @@ const About = () => {
                         <Briefcase size={28} className="bento-icon" />
                         <div>
                             <span className="bento-label">Atuação</span>
-                            <span className="bento-value">SENSIPAM</span>
+                            <span className="bento-value">CENSIPAM</span>
                         </div>
                         <ArrowUpRight size={20} className="bento-arrow" />
                     </motion.div>

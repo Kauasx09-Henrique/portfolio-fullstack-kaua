@@ -6,51 +6,47 @@
     display: flex;
     justify-content: center;
     z-index: 1000;
+    pointer-events: none;
     transition: transform 0.4s ease;
 }
 
-.desktop-pill {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    background: transparent;
-    padding: 0.5rem;
-    border-radius: 100px;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    border: 1px solid transparent;
+.navbar-desktop.scrolled {
+    transform: translateY(-0.5rem);
 }
 
-.navbar-desktop.scrolled .desktop-pill {
-    background: rgba(15, 15, 17, 0.7);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+.desktop-pill {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 0.5rem;
+    border-radius: 100px;
+    display: flex;
+    gap: 0.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    pointer-events: auto;
 }
 
 .desktop-item {
     position: relative;
     padding: 0.6rem 1.2rem;
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.6);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    z-index: 1;
-    transition: color 0.3s ease;
     border-radius: 100px;
+    color: #52525b;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.desktop-item.active {
+    color: #000000;
+    font-weight: 600;
 }
 
 .desktop-item:hover {
-    color: #ffffff;
-}
-
-.desktop-hover-pill {
-    position: absolute;
-    inset: 0;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 100px;
-    z-index: -1;
+    color: #000000;
 }
 
 .desktop-item-text {
@@ -58,8 +54,68 @@
     z-index: 2;
 }
 
+.desktop-hover-pill {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 100px;
+    z-index: 0;
+}
+
 .mobile-dock {
     display: none;
+    position: fixed;
+    bottom: 2rem;
+    left: 0;
+    width: 100%;
+    justify-content: center;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.dock-container {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 0.8rem 1.5rem;
+    border-radius: 100px;
+    display: flex;
+    gap: 2rem;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    pointer-events: auto;
+}
+
+.dock-item {
+    position: relative;
+    color: #a1a1aa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 0.2rem;
+}
+
+.dock-item.active {
+    color: #000000;
+    transform: translateY(-4px);
+}
+
+.dock-icon {
+    position: relative;
+    z-index: 2;
+}
+
+.dock-indicator {
+    position: absolute;
+    bottom: -8px;
+    width: 4px;
+    height: 4px;
+    background-color: #000000;
+    border-radius: 50%;
+    z-index: 1;
 }
 
 @media (max-width: 768px) {
@@ -68,62 +124,6 @@
     }
 
     .mobile-dock {
-        position: fixed;
-        bottom: 2rem;
-        left: 0;
-        right: 0;
         display: flex;
-        justify-content: center;
-        z-index: 9999;
-        pointer-events: none;
-        padding: 0 1rem;
-    }
-
-    .dock-container {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        background-color: rgba(0, 0, 0, 0.95);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        padding: 0.75rem 1rem;
-        border-radius: 100px;
-        border: 1px solid rgba(0, 0, 0, 0.08);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        pointer-events: auto;
-        max-width: 100%;
-        overflow-x: auto;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
-
-    .dock-container::-webkit-scrollbar {
-        display: none;
-    }
-
-    .dock-item {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        color: #71717a;
-        transition: color 0.3s ease;
-        flex-shrink: 0;
-    }
-
-    .dock-item.active,
-    .dock-item:hover {
-        color: #ffffff;
-    }
-
-    .dock-indicator {
-        position: absolute;
-        inset: 0;
-        background-color: rgba(0, 0, 0, 0.05);
-        border-radius: 50%;
-        z-index: -1;
     }
 }

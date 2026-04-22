@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Home, User, Code2, Folder, Award, Mail, FileText, Activity, Map } from 'lucide-react'
+import { Home, User, Briefcase, FileText, Mail } from 'lucide-react'
 import { motion } from 'framer-motion'
 import '../styles/navbar.css'
 
@@ -14,24 +14,22 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 
+    // Navegações Essenciais (Apenas o que importa)
     const navLinks = [
         { name: 'Home', href: '#home', icon: Home },
         { name: 'Sobre', href: '#about', icon: User },
-        { name: 'Trajetória', href: '#journey', icon: Map },
-        { name: 'Tech', href: '#tech', icon: Code2 },
-        { name: 'Projetos', href: '#projects', icon: Folder },
-        { name: 'Métricas', href: '#GithubMetrics', icon: Activity },
-        { name: 'Certificados', href: '#certificates', icon: Award },
-        { name: 'Currículos', href: '#resume', icon: FileText },
+        { name: 'Projetos', href: '#projects', icon: Briefcase },
+        { name: 'Currículo', href: '#resume', icon: FileText },
         { name: 'Contato', href: '#contact', icon: Mail }
     ]
 
     return (
         <>
+            {/* --- DESKTOP NAVBAR (Pílula no Topo) --- */}
             <motion.header
                 className={`navbar-desktop ${scrolled ? 'scrolled' : ''}`}
-                initial={{ y: -100 }}
-                animate={{ y: 0 }}
+                initial={{ y: -100, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
                 <nav className="desktop-pill" onMouseLeave={() => setHovered(null)}>
@@ -56,11 +54,12 @@ const Navbar = () => {
                 </nav>
             </motion.header>
 
+            {/* --- MOBILE DOCK (Barra inferior de ícones) --- */}
             <motion.nav
                 className="mobile-dock"
-                initial={{ y: 100 }}
-                animate={{ y: 0 }}
-                transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                initial={{ y: 100, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.5 }}
             >
                 <div className="dock-container">
                     {navLinks.map((link) => {
@@ -73,8 +72,9 @@ const Navbar = () => {
                                 href={link.href}
                                 className={`dock-item ${isActive ? 'active' : ''}`}
                                 onClick={() => setActive(link.name)}
+                                aria-label={link.name}
                             >
-                                <Icon size={22} strokeWidth={isActive ? 2 : 1.5} />
+                                <Icon size={24} strokeWidth={isActive ? 2 : 1.5} className="dock-icon" />
                                 {isActive && (
                                     <motion.div
                                         layoutId="dock-indicator"
