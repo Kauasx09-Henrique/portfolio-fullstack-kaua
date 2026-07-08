@@ -5,103 +5,112 @@ import '../styles/resume.css'
 
 const devData = {
     name: "KAUÃ HENRIQUE SANTOS DE ARAUJO",
-    role: "Desenvolvedor Full Stack | Foco em Backend & Mobile",
+    role: "Desenvolvedor Full Stack | Engenharia de Software",
     contact: "Brasília-DF | kauahenriquesx09@gmail.com | kauahenriquedev.com.br",
-    summary: "Desenvolvedor Full Stack com sólida experiência acadêmica e prática em Backend (Node.js, NestJS, PHP) e Mobile (React Native). Atualmente estagiário no SENSIPAM, atuando como Suporte Help Desk. Possuo forte domínio em modelagem de banco de dados (PostgreSQL/MySQL), criação de APIs RESTful escaláveis e boas práticas de arquitetura de software (Clean Code). Busco oportunidades para aplicar conhecimentos em arquitetura de sistemas e resolver problemas complexos através do código.",
+    summary: "Desenvolvedor Full Stack de 21 anos, graduado em Análise e Desenvolvimento de Sistemas e atual estudante de Engenharia de Software. Especialista na criação de arquiteturas escaláveis, com forte atuação em Backend (PHP, Node.js, NestJS) e modelagem de Banco de Dados. Atualmente no CENSIPAM, componho a equipe de desenvolvimento do projeto DQBRN para o Exército Brasileiro, um painel estratégico voltado ao monitoramento de desastres ambientais, químicos, radiológicos e epidemiológicos.",
     skills: [
-        "Backend: Node.js, NestJS, PHP 8+, Express.js.",
-        "Banco de Dados: PostgreSQL, MySQL, Modelagem de Dados, Sequelize/Prisma ORM.",
-        "Mobile & Front: React Native, React.js, TypeScript, JavaScript (ES6+), HTML5/CSS3.",
-        "Ferramentas & DevOps: Git/GitHub, Postman, Linux, VS Code.",
-        "Metodologias: Scrum, Kanban, Desenvolvimento Ágil."
+        "Backend: PHP 8+, Node.js, NestJS, Express.js.",
+        "Banco de Dados: Modelagem Relacional, PostgreSQL, MySQL, Otimização de Queries.",
+        "Mobile & Frontend: React Native, React.js, TypeScript, JavaScript (ES6+).",
+        "Ferramentas & Infra: Git/GitHub, Postman, Linux, VS Code, APIs RESTful.",
+        "Práticas: Clean Code, Metodologias Ágeis (Scrum/Kanban), Arquitetura de Software."
     ],
     experience: [
         {
-            company: "SENSIPAM (Centro Operacional e Gestor da Amazônia)",
+            company: "CENSIPAM (Centro Operacional e Gestor da Amazônia)",
             role: "Estagiário de Desenvolvimento de Sistemas",
             period: "01/2024 - Atualmente",
             tasks: [
-                "Atuação no desenvolvimento e manutenção de sistemas internos focados em monitoramento e gestão.",
-                "Aplicação de tecnologias Full Stack (Java/JavaScript) para resolução de problemas em ambiente de alta complexidade.",
-                "Colaboração em equipes multidisciplinares utilizando metodologias ágeis para entrega contínua de software.",
-                "Desenvolvimento de interfaces e otimização de queries em banco de dados para melhor performance."
+                "Desenvolvimento e manutenção do painel estratégico DQBRN para o Exército Brasileiro, focado em desastres ambientais e químicos.",
+                "Implementação de lógicas de negócio complexas utilizando PHP e arquitetura de banco de dados.",
+                "Otimização de consultas SQL (PostgreSQL/MySQL) para lidar com grandes volumes de dados geoespaciais e relatórios.",
+                "Colaboração em equipes multidisciplinares e aplicação de metodologias ágeis para entregas contínuas."
             ]
         }
     ],
     projects: [
         {
+            name: "DQBRN - Exército Brasileiro (Projeto CENSIPAM)",
+            tech: "PHP, Banco de Dados, APIs",
+            desc: "Painel de monitoramento focado em desastres ambientais, químicos, radiológicos e epidemiológicos. Atuação direta no back-end para processamento de dados críticos em tempo real."
+        },
+        {
             name: "ClinicPed+ (Sistema de Gestão de Clínicas)",
             tech: "NestJS, React Native, PostgreSQL",
-            desc: "Desenvolvimento de uma solução completa (Mobile + API) para agendamento de consultas. Implementação de autenticação segura via JWT, validação de dados com DTOs e arquitetura modular no Backend. Criação de rotinas de integração com APIs de CEP para normalização de endereços."
+            desc: "Solução completa (Mobile + API) para agendamento de consultas. Autenticação via JWT, validação com DTOs e integração com APIs externas."
         },
         {
             name: "Barbearia Full Stack",
             tech: "Node.js, React.js, PostgreSQL",
-            desc: "Criação de sistema de agendamento online com painel administrativo. Desenvolvimento de API RESTful com autenticação e gestão de horários em tempo real. Interface web responsiva focada na experiência do usuário (UX)."
-        },
-        {
-            name: "Bibliafy",
-            tech: "React Native, API Rest, JSON",
-            desc: "Projeto Open Source focado em consumo de dados e performance mobile. Estruturação de API própria para servir dados bíblicos de forma otimizada para o Front-end."
+            desc: "Sistema de agendamento online com painel administrativo e gestão de horários em tempo real. Foco em UX/UI responsiva."
         },
         {
             name: "DisBusiness",
             tech: "PHP, MySQL, UX/UI",
-            desc: "Plataforma para microempreendedores gerenciarem catálogos de produtos. Foco em lógica de negócios robusta no servidor e interface intuitiva para usuários não técnicos."
+            desc: "Plataforma para microempreendedores gerenciarem catálogos de produtos com lógica de negócios robusta e interface acessível."
         }
     ],
     education: {
+        course: "Bacharelado em Engenharia de Software",
+        inst: "Instituto de Educação Superior de Brasília (IESB)",
+        status: "Em andamento"
+    },
+    education2: {
         course: "Análise e Desenvolvimento de Sistemas",
         inst: "Instituto de Educação Superior de Brasília (IESB)",
-        status: "5º Semestre | Previsão de Formatura: 06/2026"
+        status: "Graduado"
     },
-    languages: ["Português: Nativo.", "Inglês: Técnico."]
+    languages: ["Português: Nativo.", "Inglês: Técnico Avançado (Leitura e Documentação)."]
 }
 
 const supportData = {
     name: "KAUÃ HENRIQUE SANTOS DE ARAUJO",
-    role: "Analista de Suporte Técnico | Sustentação de Sistemas & N2",
+    role: "Analista de Suporte Técnico & Sustentação de Sistemas",
     contact: "Brasília-DF | kauahenriquesx09@gmail.com | kauahenriquedev.com.br",
-    summary: "Profissional de TI em formação (5º Semestre), com experiência prática em ambientes de missão crítica (SENSIPAM). Diferencio-me pela capacidade de leitura de código e análise de banco de dados (SQL) para diagnóstico de incidentes. Busco atuar com Suporte Técnico ou Sustentação, utilizando minha lógica de programação e conhecimentos de infraestrutura para resolver chamados com agilidade, garantir SLAs e otimizar a experiência do usuário final.",
+    summary: "Profissional de TI (21 anos), formado em Análise e Desenvolvimento de Sistemas e graduando em Engenharia de Software. Possuo vasta experiência prática no CENSIPAM em ambientes de missão crítica. Especializado na sustentação de sistemas governamentais de alto impacto, como o projeto DQBRN do Exército Brasileiro. Destaco-me pela capacidade de leitura de código, análise aprofundada de bancos de dados (SQL) e resolução ágil de incidentes de infraestrutura e software (N1/N2).",
     skills: [
-        "Sistemas Operacionais: Windows Avançado (Configuração, Redes), Linux (Básico/Intermediário - Terminal).",
-        "Banco de Dados: Consultas SQL para relatórios e correção de dados (PostgreSQL/MySQL).",
-        "Diagnóstico: Análise de Logs, Debugging de aplicações Web/Mobile, Testes de API (Postman).",
-        "Infraestrutura: Noções de Redes, Docker, Git (Versionamento), Instalação de Softwares.",
-        "Atendimento: Facilidade em traduzir termos técnicos para usuários leigos, Foco em resolução de problemas."
+        "Sistemas Operacionais: Windows Avançado (Redes, Configuração), Linux (Terminal, Permissões).",
+        "Banco de Dados: Consultas SQL avançadas para auditoria, relatórios e correção de inconsistências.",
+        "Diagnóstico & Sustentação: Análise de Logs, Debugging Web, Monitoramento de Sistemas Críticos.",
+        "Infraestrutura & Redes: Protocolos TCP/IP, DNS, Docker básico, Controle de Versão (Git).",
+        "Atendimento Técnico: Resolução de incidentes sob SLA rigoroso e comunicação assertiva com usuários."
     ],
     experience: [
         {
-            company: "SENSIPAM (Centro Operacional e Gestor da Amazônia)",
-            role: "Estagiário de TI / Desenvolvimento & Sustentação",
+            company: "CENSIPAM (Centro Operacional e Gestor da Amazônia)",
+            role: "Estagiário de TI / Sustentação e Banco de Dados",
             period: "01/2024 - Atualmente",
             tasks: [
-                "Atuação direta na sustentação e manutenção de sistemas internos de monitoramento.",
-                "Responsável pela identificação, análise e correção de bugs em aplicações críticas.",
-                "Execução de rotinas de banco de dados e validação de integridade das informações.",
-                "Apoio técnico a usuários e colaboradores na utilização das ferramentas da instituição.",
-                "Documentação de processos e falhas para base de conhecimento interna."
+                "Sustentação técnica do sistema DQBRN (Exército Brasileiro), garantindo alta disponibilidade do painel de monitoramento de desastres.",
+                "Execução de queries complexas em banco de dados para correção de falhas e extração de relatórios operacionais.",
+                "Identificação, análise e triagem de bugs em aplicações críticas, reportando de forma estruturada para a equipe de engenharia.",
+                "Apoio técnico direto aos usuários, resolvendo incidentes operacionais e documentando soluções na base de conhecimento."
             ]
         }
     ],
     projects: [
         {
-            name: "ClinicPed+ (Sistema de Gestão)",
-            tech: "Validação & UX",
-            desc: "Desenvolvi o painel administrativo com foco em controle de usuários e permissões. Implementei validações de dados (CEP, CPF) para reduzir erros operacionais no cadastro. Destaque: Experiência em garantir a estabilidade de um sistema com múltiplos níveis de acesso."
+            name: "Sustentação DQBRN (Exército Brasileiro)",
+            tech: "SQL, Troubleshooting, Monitoramento",
+            desc: "Garantia da integridade dos dados e funcionamento do painel de desastres químicos e ambientais. Correção de anomalias diretamente na base de dados e suporte tático operacional."
         },
         {
-            name: "DisBusiness (Plataforma Web)",
-            tech: "Troubleshooting",
-            desc: "Foco total na experiência do usuário final, criando interfaces intuitivas para evitar chamados de dúvida. Diagnóstico e correção de falhas de conexão com banco de dados MySQL durante o desenvolvimento."
+            name: "ClinicPed+ (Controle de Acessos)",
+            tech: "Validação & Segurança",
+            desc: "Estruturação de validações e permissões no painel administrativo, reduzindo erros de operação de usuários finais e mantendo a estabilidade do sistema."
         }
     ],
     education: {
+        course: "Bacharelado em Engenharia de Software",
+        inst: "Instituto de Educação Superior de Brasília (IESB)",
+        status: "Em andamento"
+    },
+    education2: {
         course: "Análise e Desenvolvimento de Sistemas",
         inst: "Instituto de Educação Superior de Brasília (IESB)",
-        status: "5º Semestre (Foco em Infraestrutura e Software) | Previsão de Formatura: 06/2026"
+        status: "Graduado"
     },
-    languages: ["Português: Nativo (Boa comunicação verbal e escrita para atendimento).", "Inglês: Intermediário/Técnico (Leitura de documentação técnica e logs de erro)."]
+    languages: ["Português: Nativo (Comunicação clara para suporte).", "Inglês: Intermediário/Técnico (Leitura de manuais e logs)."]
 }
 
 const Resume = () => {
@@ -180,10 +189,15 @@ const Resume = () => {
 
             <div className="cv-section">
                 <h3 className="cv-section-title">FORMAÇÃO ACADÊMICA</h3>
-                <div className="cv-block">
+                <div className="cv-block" style={{ marginBottom: '1rem' }}>
                     <strong>{data.education.course}</strong><br />
                     {data.education.inst}<br />
                     {data.education.status}
+                </div>
+                <div className="cv-block">
+                    <strong>{data.education2.course}</strong><br />
+                    {data.education2.inst}<br />
+                    {data.education2.status}
                 </div>
             </div>
 
@@ -210,7 +224,7 @@ const Resume = () => {
                         <span className="resume-label">Perfil 01</span>
                         <h2 className="resume-massive-title">Desenvolvedor<br />Full Stack</h2>
                         <p className="resume-minimal-desc">
-                            Focado em React, Node.js, arquitetura escalável e desenvolvimento de soluções Web e Mobile de alta performance.
+                            Focado na stack PHP/Node, arquitetura escalável e integração de sistemas complexos de missão crítica.
                         </p>
                         <div className="resume-action-row">
                             <button onClick={() => openModal('dev', 'Desenvolvedor Full Stack')} className="btn-editorial-primary">
@@ -234,7 +248,7 @@ const Resume = () => {
                         <span className="resume-label">Perfil 02</span>
                         <h2 className="resume-massive-title">Suporte<br />Técnico</h2>
                         <p className="resume-minimal-desc">
-                            Experiência sólida em hardware, infraestrutura de redes e resolução eficiente de problemas N1/N2.
+                            Especialista em resolução de problemas N2, análise de banco de dados e sustentação de infraestruturas operacionais.
                         </p>
                         <div className="resume-action-row">
                             <button onClick={() => openModal('support', 'Suporte Técnico N1/N2')} className="btn-editorial-primary">

@@ -41,10 +41,10 @@ const About = () => {
                     >
                         <h3 className="bento-subtitle">A Mente por Trás do Código</h3>
                         <p>
-                            Sou <strong>Kauã Henrique</strong>, Desenvolvedor Full Stack especializado em Backend (Node.js, NestJS, PHP) e Mobile (React Native). Construo arquiteturas escaláveis e banco de dados otimizados.
+                            Sou <strong>Kauã Henrique</strong>, desenvolvedor de 21 anos residente em Brasília. Sou formado em Análise e Desenvolvimento de Sistemas e atualmente curso o bacharelado em Engenharia de Software.
                         </p>
                         <p>
-                            Atualmente, aplico minhas habilidades como <strong>Estagiário no CENSIPAM</strong>, focado no ecossistema interno, e estou no 5º semestre de Análise e Desenvolvimento de Sistemas.
+                            Atuo no <strong>CENSIPAM</strong> aplicando meus conhecimentos em PHP e Banco de Dados. Tenho muito orgulho de integrar o desenvolvimento do <strong>DQBRN</strong>, um painel estratégico para o Exército Brasileiro focado no monitoramento e gestão de desastres ambientais, químicos, radiológicos e epidemiológicos.
                         </p>
                     </motion.div>
 
@@ -57,8 +57,8 @@ const About = () => {
                     >
                         <Briefcase size={28} className="bento-icon" />
                         <div>
-                            <span className="bento-label">Atuação</span>
-                            <span className="bento-value">CENSIPAM</span>
+                            <span className="bento-label">Atuação Estratégica</span>
+                            <span className="bento-value">CENSIPAM | DQBRN</span>
                         </div>
                         <ArrowUpRight size={20} className="bento-arrow" />
                     </motion.div>
@@ -73,7 +73,7 @@ const About = () => {
                         <GraduationCap size={28} className="bento-icon" />
                         <div>
                             <span className="bento-label">Acadêmico</span>
-                            <span className="bento-value">5º Sem ADS</span>
+                            <span className="bento-value">Eng. de Software</span>
                         </div>
                         <ArrowUpRight size={20} className="bento-arrow" />
                     </motion.div>
@@ -87,8 +87,8 @@ const About = () => {
                     >
                         <Code size={28} className="bento-icon-dark" />
                         <div>
-                            <span className="bento-label-dark">Tech Stack</span>
-                            <span className="bento-value-dark">Node.js & React Native</span>
+                            <span className="bento-label-dark">Tech Stack Base</span>
+                            <span className="bento-value-dark">PHP & Banco de Dados</span>
                         </div>
                     </motion.div>
                 </div>
