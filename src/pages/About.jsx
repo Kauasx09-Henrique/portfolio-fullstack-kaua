@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Briefcase, GraduationCap, Code, ArrowUpRight } from 'lucide-react'
 import '../styles/about.css'
-import meImg from '../../public/me/foto-Profissional.jpg'
+import meImg from '../../public/me/foto-Profissional'
 
 const About = () => {
     return (
