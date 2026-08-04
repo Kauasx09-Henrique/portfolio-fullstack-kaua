@@ -1,11 +1,15 @@
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { useRef, useState } from 'react'
+import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { Briefcase, GraduationCap, BookOpen, Code } from 'lucide-react'
 import '../styles/journey.css'
+
+
+import fotoIesb from '../../public/me/foto-iesb.jpg' // Substitua pelo caminho correto da sua imagem
 
 const Journey = () => {
     const containerRef = useRef(null)
     const isInView = useInView(containerRef, { once: true, margin: "-100px" })
+    const [hoveredIndex, setHoveredIndex] = useState(null)
 
     const trajectory = [
         {
@@ -27,7 +31,8 @@ const Journey = () => {
             title: 'Análise e Desenvolvimento de Sistemas',
             location: 'IESB',
             description: 'Conclusão da graduação com sólida base na construção de sistemas, domínio de metodologias ágeis e aplicação rigorosa de padrões de qualidade em código estruturado.',
-            icon: <GraduationCap size={24} strokeWidth={1.5} />
+            icon: <GraduationCap size={24} strokeWidth={1.5} />,
+            image: fotoIesb // Substitua pela sua imagem importada
         },
         {
             year: '2024',
@@ -82,6 +87,8 @@ const Journey = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true, margin: "-50px" }}
                                 transition={{ duration: 0.6, delay: (trajectory.length - index) * 0.2, ease: [0.16, 1, 0.3, 1] }}
+                                onMouseEnter={() => setHoveredIndex(index)}
+                                onMouseLeave={() => setHoveredIndex(null)}
                             >
                                 <div className="journey-year-col">
                                     <span className="journey-year">{item.year}</span>
@@ -96,6 +103,22 @@ const Journey = () => {
                                         <span className="journey-location">{item.location}</span>
                                         <p className="journey-desc">{item.description}</p>
                                     </div>
+
+                                    {/* Imagem Flutuante */}
+                                    <AnimatePresence>
+                                        {hoveredIndex === index && item.image && (
+                                            <motion.div
+                                                className="journey-hover-image"
+                                                initial={{ opacity: 0, scale: 0.8, rotate: -5, x: 20 }}
+                                                animate={{ opacity: 1, scale: 1, rotate: 0, x: 0 }}
+                                                exit={{ opacity: 0, scale: 0.8, rotate: 5, x: 20 }}
+                                                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                            >
+                                                <img src={item.image} alt={item.title} />
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
+
                                 </div>
                             </motion.div>
                         ))}
