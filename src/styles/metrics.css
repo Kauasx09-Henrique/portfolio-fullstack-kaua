@@ -1,158 +1,343 @@
 .metrics-telemetry-section {
-    background-color: #000000;
-    padding: 8rem 0;
-    font-family: 'Inter', system-ui, sans-serif;
-    color: #ffffff;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: #000;
+    color: #fff;
+    padding: 8rem 2rem;
+    border-top: 1px solid rgba(255, 255, 255, .06);
+    font-family: Geist, system-ui, sans-serif;
 }
 
+.metrics-container {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+/* header */
 .metrics-header {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    margin-bottom: 5rem;
     flex-wrap: wrap;
     gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+
+.metrics-heading {
+    display: flex;
+    flex-direction: column;
+    gap: .9rem;
+}
+
+.metrics-eyebrow {
+    font-family: 'Geist Mono', ui-monospace, monospace;
+    font-size: .72rem;
+    letter-spacing: .18em;
+    color: #52525b;
 }
 
 .metrics-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 800;
-    letter-spacing: -0.04em;
     margin: 0;
-    line-height: 1;
+    font-size: clamp(2.6rem, 5vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -.045em;
+    line-height: .95;
 }
 
 .metrics-badge {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    font-family: monospace;
-    font-size: 0.8rem;
+    gap: .7rem;
+    font-family: 'Geist Mono', ui-monospace, monospace;
+    font-size: .72rem;
+    letter-spacing: .14em;
     color: #a1a1aa;
-    letter-spacing: 0.1em;
-    padding: 0.5rem 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: .55rem 1rem;
+    border: 1px solid rgba(255, 255, 255, .12);
     border-radius: 100px;
 }
 
 .pulse-dot {
-    width: 8px;
-    height: 8px;
-    background-color: #10b981;
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
-    box-shadow: 0 0 10px #10b981;
+    background: #fff;
+    box-shadow: 0 0 12px #fff;
     animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-    0% {
+
+    0%,
+    100% {
         opacity: 1;
         transform: scale(1);
     }
 
     50% {
-        opacity: 0.5;
-        transform: scale(1.2);
-    }
-
-    100% {
-        opacity: 1;
-        transform: scale(1);
+        opacity: .35;
+        transform: scale(1.25);
     }
 }
 
-.metrics-grid {
+/* tiles */
+.metrics-tiles {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1px;
+    background: rgba(255, 255, 255, .08);
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
 }
 
-.metric-card {
-    background-color: #050505;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    padding: 3rem;
+.metric-tile {
+    background: #000;
+    padding: 2.6rem 1.6rem 2.2rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    transition: border-color 0.4s ease;
+    gap: 1.6rem;
+    min-width: 0;
 }
 
-.metric-card:hover {
-    border-color: rgba(255, 255, 255, 0.15);
-}
-
-.card-span-full {
-    grid-column: 1 / -1;
-}
-
-.metric-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-family: monospace;
-    font-size: 0.85rem;
+.metric-label {
+    font-family: 'Geist Mono', ui-monospace, monospace;
+    font-size: .7rem;
+    letter-spacing: .14em;
     color: #71717a;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 3rem;
 }
 
 .metric-value {
-    font-size: clamp(4rem, 8vw, 6rem);
+    font-size: clamp(2.4rem, 4.4vw, 3.6rem);
     font-weight: 800;
+    letter-spacing: -.05em;
     line-height: 1;
-    letter-spacing: -0.05em;
-    color: #ffffff;
 }
 
-.metric-latest-repo {
+/* panels */
+.metrics-charts {
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    gap: 1px;
+    background: rgba(255, 255, 255, .08);
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+
+.metrics-panel {
+    background: #000;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    min-width: 0;
+}
+
+.panel-head {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    flex-wrap: wrap;
     gap: 1rem;
 }
 
-.repo-name {
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    color: #ffffff;
+.panel-note {
+    font-family: 'Geist Mono', ui-monospace, monospace;
+    font-size: .72rem;
+    color: #3f3f46;
 }
 
-.repo-lang {
-    font-family: monospace;
-    font-size: 1rem;
-    color: #000000;
-    background-color: #ffffff;
-    padding: 0.4rem 1rem;
+/* linguagens */
+.lang-bar {
+    display: flex;
+    gap: 2px;
+    height: 10px;
     border-radius: 100px;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+    overflow: hidden;
+    background: rgba(255, 255, 255, .06);
 }
 
-@media (max-width: 768px) {
+.lang-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.lang-row {
+    display: grid;
+    grid-template-columns: 12px 1fr auto auto;
+    align-items: center;
+    gap: 1rem;
+    padding: .85rem 0;
+    border-top: 1px solid rgba(255, 255, 255, .05);
+}
+
+.lang-swatch {
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+}
+
+.lang-name {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: -.01em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.lang-repos {
+    font-family: 'Geist Mono', ui-monospace, monospace;
+    font-size: .75rem;
+    color: #52525b;
+}
+
+.lang-pct {
+    font-family: 'Geist Mono', ui-monospace, monospace;
+    font-size: .85rem;
+    color: #d4d4d8;
+    min-width: 3.6rem;
+    text-align: right;
+}
+
+/* commits/semana */
+.week-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+    height: 150px;
+}
+
+.week-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    min-width: 0;
+}
+
+.week-bar {
+    min-height: 2px;
+    border-radius: 2px;
+}
+
+.week-axis {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    font-family: 'Geist Mono', ui-monospace, monospace;
+    font-size: .7rem;
+    letter-spacing: .1em;
+    color: #52525b;
+    border-top: 1px solid rgba(255, 255, 255, .05);
+    padding-top: .9rem;
+}
+
+/* ranking */
+.metrics-ranking {
+    padding: 3rem 2rem 1rem;
+    gap: 2.2rem;
+}
+
+.rank-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.rank-row {
+    display: grid;
+    grid-template-columns: 2.2rem minmax(0, 2.4fr) minmax(80px, 1fr) auto;
+    align-items: center;
+    gap: 1.4rem;
+    padding: 1.15rem 0;
+    border-top: 1px solid rgba(255, 255, 255, .06);
+}
+
+.rank-index {
+    font-family: 'Geist Mono', ui-monospace, monospace;
+    font-size: .8rem;
+    color: #3f3f46;
+}
+
+.rank-id {
+    display: flex;
+    align-items: baseline;
+    gap: .9rem;
+    min-width: 0;
+}
+
+.rank-name {
+    font-size: clamp(1.1rem, 2vw, 1.6rem);
+    font-weight: 700;
+    letter-spacing: -.03em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.rank-lang {
+    font-family: 'Geist Mono', ui-monospace, monospace;
+    font-size: .68rem;
+    letter-spacing: .08em;
+    color: #71717a;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.rank-track {
+    height: 4px;
+    width: 100%;
+    max-width: 220px;
+    background: rgba(255, 255, 255, .07);
+    border-radius: 100px;
+    overflow: hidden;
+}
+
+.rank-fill {
+    height: 100%;
+}
+
+.rank-metric {
+    font-family: 'Geist Mono', ui-monospace, monospace;
+    font-size: .85rem;
+    color: #d4d4d8;
+    min-width: 5.5rem;
+    text-align: right;
+}
+
+.metrics-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid rgba(255, 255, 255, .06);
+    font-family: 'Geist Mono', ui-monospace, monospace;
+    font-size: .7rem;
+    letter-spacing: .12em;
+    color: #52525b;
+}
+
+@media (max-width: 900px) {
     .metrics-telemetry-section {
-        padding: 5rem 0;
+        padding: 5rem 1.25rem;
     }
 
-    .metrics-grid {
+    .metrics-tiles {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .metrics-charts {
         grid-template-columns: 1fr;
     }
 
-    .metric-card {
-        padding: 2rem;
+    .metrics-panel {
+        padding: 2.25rem 1.25rem;
     }
 
-    .card-span-full {
-        grid-column: 1;
+    .rank-row {
+        grid-template-columns: 1.8rem minmax(0, 1fr) auto;
     }
 
-    .metric-latest-repo {
-        flex-direction: column;
-        align-items: flex-start;
+    .rank-track {
+        display: none;
     }
 }
