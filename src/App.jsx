@@ -10,6 +10,10 @@ import Certificates from './pages/Certificates'
 import Resume from './components/Resume'
 import Contact from './pages/Contact'
 
+
+// Analise da vercel
+import { Analytics } from '@vercel/analytics/react'
+
 function App() {
   return (
     <div className="app">
