@@ -27,7 +27,8 @@ const Tech = () => {
         { name: 'VS Code', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg' },
         { name: 'INTELLIJ', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/intellij/intellij-original.svg' },
         { name: 'Docker', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg' },
-        {}
+        { name: 'GitLab', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg' },
+        { name: 'AWS', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg' }
     ]
 
     return (
@@ -50,7 +51,7 @@ const Tech = () => {
                     transition={{ duration: 0.8 }}
                 >
                     {skills.map((skill, index) => {
-                        const isBlackIcon = ['Vercel', 'Render', 'GitHub'].includes(skill.name);
+                        const isBlackIcon = ['Vercel', 'Render', 'GitHub', 'AWS'].includes(skill.name);
 
                         return (
                             <div key={index} className="ultra-item">
